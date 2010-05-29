@@ -1,7 +1,5 @@
 h1. Emacs files
 
-This project is my emacs configuration for daily work. 
+Here are my persnal emacs configuration files that I use for daily work.
 
-The purpose of this README is to document all changes made to the project. 
-
-My config files are mostly like http://github.com/alexott/emacs-configs, I only use/change what is useful.
+The purpose of this README is to document all changes made to the project and be a tutorial for anyone who wants to use it. My files are mostly a copy from http://github.com/alexott/emacs-configs and I only use or change what is useful for me.
