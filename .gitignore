@@ -1,0 +1,8 @@
+custom.el
+*elc
+.svn
+.DS_Store
+session*
+\#*
+*~
+.emacs-semanticdb/

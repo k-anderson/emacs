@@ -1,0 +1,2 @@
+
+(highlight-parentheses-mode t)
