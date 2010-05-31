@@ -2,4 +2,13 @@ h1. Emacs files
 
 Here are my persnal emacs configuration files that I use for daily work.
 
-The purpose of this README is to document all changes made to the project and be a tutorial for anyone who wants to use it. My files are mostly a copy from http://github.com/alexott/emacs-configs and I only use or change what is useful for me.
+The purpose of this README is to document all changes made to the project and be a tutorial for anyone who wants to use it. My files are mostly a copy from "http://github.com/alexott/emacs-configs":http://github.com/alexott/emacs-configs and I only use or change what is useful for me.
+
+I'm going to separate this tutorial for each mode I use.
+
+h2. cc-mode
+
+This mode supports C/C++ coding. It's supporting autocomplete, on the fly compilation for error reports, cmake easy compilation and much more.
+
+
+

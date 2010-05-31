@@ -14,7 +14,9 @@
   (local-set-key "\C-c:" 'uncomment-region)
   (local-set-key "\C-c;" 'comment-region)
   (local-set-key "\C-c\C-c" 'comment-region)
-  (highlight-parentheses-mode t)
+  (show-paren-mode t)
+  (setq make-backup-files nil)
+  (auto-save-mode nil)
   )
 
 ;; show FIXME/TODO/BUG keywords

@@ -36,6 +36,9 @@
 ;; Cedet conf
 (load (concat emacs-dir "/rc/emacs-rc-cedet.el"))
 
+;; Load projects configuration
+(load (concat emacs-dir "/rc/emacs-rc-cpp-projects.el"))
+
 ;; Flymake conf
 (load (concat emacs-dir "/rc/emacs-rc-flymake.el"))
 

@@ -2,6 +2,16 @@
 (require 'semantic-lex-spp)
 (global-ede-mode t) ; enable ede mode
 
+(setq booksamples-project
+                (ede-cpp-root-project "booksamples"
+                  :file "/home/alan/workspace/c++/pthreads/booksamples/CMakeLists.txt"
+                  :system-include-path '("/opt/include"
+                                          boost-base-directory)
+                  :local-variables (list
+                                     (cons 'compile-command 'alexott/gen-cmake-debug-compile-string)
+                                    )
+               ))
+
 ;; cpp-tests project definition
 (setq ri-main-project
       (ede-cpp-root-project "ri-main"
@@ -30,7 +40,7 @@
          (prj (ede-current-project current-dir)))
     (when prj
       (let* ((ov (oref prj local-variables))
-            (lst (assoc var ov)))
+             (lst (assoc var ov)))
         (when lst
           (cdr lst))))))
 
@@ -49,7 +59,7 @@
              (or (buffer-file-name (current-buffer)) default-directory)
              'compile-command))
          (cmd (if (functionp r) (funcall r) r)))
-;;    (message "AA: %s" cmd)
+    ;;    (message "AA: %s" cmd)
     (set (make-local-variable 'compile-command) (or cmd compile-command))
     (compile compile-command)))
 

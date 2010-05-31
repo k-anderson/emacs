@@ -15,13 +15,13 @@
 ;; customisation of cc-mode
 (defun alexott/c-mode-common-hook ()
   ;; style customization
-  (c-set-offset 'member-init-intro '++)
+  ;;(c-set-offset 'member-init-intro '++)
   (setq tab-width 2)
   (setq indent-tabs-mode nil)
-  (c-set-offset 'substatement-open 0)
+  ;;(c-set-offset 'substatement-open 0)
   (c-set-style "bsd")
   (setq c-basic-offset 2)
-  (c-toggle-auto-hungry-state 0)
+  ;;(c-toggle-auto-hungry-state 0)
   ;; minor modes
   (c-turn-on-eldoc-mode)
   ;;(gtags-mode 1)

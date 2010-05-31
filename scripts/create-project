@@ -1,0 +1,57 @@
+#!/bin/bash
+
+usage()
+{
+    echo "Usage: create-project <c, cmake> <project name(no whitespace allowed)>"
+}
+
+error()
+{
+    echo "----------------------------------------------------------------------------------------------------"
+    echo "Error: " $1
+    echo "----------------------------------------------------------------------------------------------------"
+}
+
+create_project_structure()
+{    
+    TEMPLATE_DIR=$(dirname $(readlink -f ${1}))"/../resources/create-project/templates/${2}"
+    cp -r $TEMPLATE_DIR ${3}
+
+    echo "----------------------------------------------------------------------------------------------------"
+    echo "Created project: ${3}"
+
+    if [ ${2} = "cmake" ];
+    then
+	sed 's/\$PROJECTNAME/'${3}'/g' ${3}/CMakeLists.txt > ${3}/CMakeLists_tmp.txt && mv ${3}/CMakeLists_tmp.txt ${3}/CMakeLists.txt
+
+	EDE_FILE=$(readlink -f "${3}/CMakeLists.txt")
+
+	echo "To have full support for cmake in your Emacs copy the string below to the end of your emacs/rc/emacs-rc-cpp-projects.el"	
+	echo "(setq ${3}-project
+                (ede-cpp-root-project \"${3}\"
+                  :file \"${EDE_FILE}\"
+                  :system-include-path '(\"/opt/include\"
+                                          boost-base-directory)
+                  :local-variables (list
+                                     (cons 'compile-command 'alexott/gen-cmake-debug-compile-string)
+                                    )
+               ))"
+
+    fi
+    echo "----------------------------------------------------------------------------------------------------"
+
+}
+
+if [ $# -lt 2 ]; 
+then
+    usage
+    exit -1
+fi    
+
+if [ -d $2 ];
+then
+    error "directory ${2} already exists."
+    exit -1
+fi
+
+create_project_structure ${0} ${1} ${2}

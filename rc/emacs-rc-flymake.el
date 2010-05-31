@@ -28,7 +28,7 @@
 ;;   $(CC) -o /dev/null -Wall -S ${CHK_SOURCES}
 ;; if you have include directories outside the default ones, you can add for example: -I/opt/include to it.
 (setq flymake-allowed-file-name-masks
-      (cons '(".+\\.c[c|pp]?$"
+      (cons '(".+\\.c\\(c\\|pp\\)?$"
               flymake-simple-make-init
               flymake-simple-cleanup
               flymake-get-real-file-name)
