@@ -7,8 +7,6 @@
 ;; Requirements:
 ;; Status: not intended to be distributed yet
 
-(require 'highlight-parentheses)
-
 ;; common settings for different text & programming modes
 (defun alexott/common-hook ()
   (local-set-key "\C-c:" 'uncomment-region)

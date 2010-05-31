@@ -1,2 +1,1 @@
 
-(highlight-parentheses-mode t)

@@ -1,46 +1,47 @@
 ;; Sets emacs-dir to the current directory where .emacs is placed in.
-(setq emacs-dir "~/workspace/emacs")
+(setq emacs-dir (file-name-directory (file-truename (or load-file-name buffer-file-name))))
 
 ;; Load all my personal settings. (rc files)
 
 ;; Load all defs for Emacs Ui
-(load (concat emacs-dir "/rc/emacs-rc-x.el"))
+(load (concat emacs-dir "rc/emacs-rc-x.el"))
 ;; Load all third parties files
-(load (concat emacs-dir "/rc/emacs-rc-load-vendors.el"))
+(load (concat emacs-dir "rc/emacs-rc-load-vendors.el"))
 
 ;; Theme specific
 ;; Load current theme (irblack)
-(load (concat emacs-dir "/rc/emacs-rc-theme-irblack.el"))
+(load (concat emacs-dir "rc/emacs-rc-theme-irblack.el"))
 
 ;; Common functions
-(load (concat emacs-dir "/rc/emacs-rc-common-functions.el"))
+(load (concat emacs-dir "rc/emacs-rc-common-functions.el"))
 
 ;; Common hooks specific
 ;; Definitions of common hooks
-(load (concat emacs-dir "/rc/emacs-rc-common-hooks.el"))
+(load (concat emacs-dir "rc/emacs-rc-common-hooks.el"))
 
 ;; Modes specific
 ;; CCMode customization
-(load (concat emacs-dir "/rc/emacs-rc-cc-mode.el"))
+(load (concat emacs-dir "rc/emacs-rc-cc-mode.el"))
 ;; Emacs lisp mode customization
-(load (concat emacs-dir "/rc/emacs-rc-elisp-mode.el"))
+(load (concat emacs-dir "rc/emacs-rc-elisp-mode.el"))
 ;; Textile mode
-(load (concat emacs-dir "/rc/emacs-rc-textile-mode.el"))
+(load (concat emacs-dir "rc/emacs-rc-textile-mode.el"))
 
 ;; ------------------------------------------------------------------------------------------
 
 ;; Interactively Do Things
-(load (concat emacs-dir "/rc/emacs-rc-ido.el"))
+(load (concat emacs-dir "rc/emacs-rc-ido.el"))
 
 
 ;; Cedet conf
-(load (concat emacs-dir "/rc/emacs-rc-cedet.el"))
+(load (concat emacs-dir "rc/emacs-rc-cedet.el"))
 
 ;; Load projects configuration
-(load (concat emacs-dir "/rc/emacs-rc-cpp-projects.el"))
+(load (concat emacs-dir "rc/emacs-rc-cpp-projects-functions.el"))
+(load (concat emacs-dir "rc/emacs-rc-cpp-projects-defs.el"))
 
 ;; Flymake conf
-(load (concat emacs-dir "/rc/emacs-rc-flymake.el"))
+(load (concat emacs-dir "rc/emacs-rc-flymake.el"))
 
 ;; Yasnippet
-(load (concat emacs-dir "/rc/emacs-rc-yasnippet.el"))
+(load (concat emacs-dir "rc/emacs-rc-yasnippet.el"))

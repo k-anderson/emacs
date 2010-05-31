@@ -9,7 +9,7 @@
 
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
-(setq alexott/yasnippet-dir "~/emacs/vendor/yasnippet/snippets")
+(setq alexott/yasnippet-dir (concat emacs-dir "/vendor/yasnippet/snippets"))
 (yas/load-directory alexott/yasnippet-dir)
 
 ;; hook for automatic reloading of changed snippets

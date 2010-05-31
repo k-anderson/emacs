@@ -2,37 +2,6 @@
 (require 'semantic-lex-spp)
 (global-ede-mode t) ; enable ede mode
 
-(setq booksamples-project
-                (ede-cpp-root-project "booksamples"
-                  :file "/home/alan/workspace/c++/pthreads/booksamples/CMakeLists.txt"
-                  :system-include-path '("/opt/include"
-                                          boost-base-directory)
-                  :local-variables (list
-                                     (cons 'compile-command 'alexott/gen-cmake-debug-compile-string)
-                                    )
-               ))
-
-;; cpp-tests project definition
-(setq ri-main-project
-      (ede-cpp-root-project "ri-main"
-                            :file "~/workspace/ufmg/master/ri/ri-git/ri_main/CMakeLists.txt"
-                            :system-include-path '("/opt/include"
-                                                   boost-base-directory)
-                            :local-variables (list
-                                              (cons 'compile-command 'alexott/gen-cmake-debug-compile-string)
-                                              )
-                            ))
-
-(setq cmake-test-project
-      (ede-cpp-root-project "cmake-test"
-                            :file "~/workspace/c++/cmake_example/CMakeLists.txt"
-                            :system-include-path '("/opt/include"
-                                                   boost-base-directory)
-                            :local-variables (list
-                                              (cons 'compile-command 'alexott/gen-cmake-debug-compile-string)
-                                              )
-                            ))
-
 ;; my functions for EDE
 (defun alexott/ede-get-local-var (fname var)
   "fetch given variable var from :local-variables of project of file fname"
