@@ -1,3 +1,11 @@
+;;; I want to enter the debugger on any error and see a
+;;; backtrace. This is first in the file so I get a hint where any
+;;; errors later on are.
+(setq debug-on-error t)
+
+;; copy to clipboard too
+(setq x-select-enable-clipboard t)
+
 ;; Sets emacs-dir to the current directory where .emacs is placed in.
 (setq emacs-dir (file-name-directory (file-truename (or load-file-name buffer-file-name))))
 
