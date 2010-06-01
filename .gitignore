@@ -6,3 +6,4 @@ session*
 \#*
 *~
 .emacs-semanticdb/
+rc/emacs-rc-cpp-projects-defs.el
