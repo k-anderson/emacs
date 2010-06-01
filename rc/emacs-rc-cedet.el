@@ -12,6 +12,10 @@
 ;; (semantic-load-enable-code-helpers)
 (semantic-load-enable-excessive-code-helpers)
 
+;; ede
+(require 'semantic-lex-spp)
+(global-ede-mode t) ; enable ede mode
+
 (global-semantic-mru-bookmark-mode 1)
 
 ;; (require 'semantic-decorate-include)

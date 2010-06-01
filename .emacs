@@ -3,53 +3,54 @@
 ;;; errors later on are.
 (setq debug-on-error t)
 
-;; copy to clipboard too
-(setq x-select-enable-clipboard t)
-
 ;; Sets emacs-dir to the current directory where .emacs is placed in.
 (setq emacs-dir (file-name-directory (file-truename (or load-file-name buffer-file-name))))
 
-;; Load all my personal settings. (rc files)
+;; Load rc files
 
-;; Load all defs for Emacs Ui
-(load (concat emacs-dir "rc/emacs-rc-x.el"))
-;; Load all third parties files
+;; --[Load all vendors]----------------------------------------------------------------------------------------
 (load (concat emacs-dir "rc/emacs-rc-load-vendors.el"))
 
-;; Theme specific
+;; --[Load emacs X confs]----------------------------------------------------------------------------------------
+(load (concat emacs-dir "rc/emacs-rc-editor.el"))
+
+;; --[Load theme confs]----------------------------------------------------------------------------------------
 ;; Load current theme (irblack)
 (load (concat emacs-dir "rc/emacs-rc-theme-irblack.el"))
 
+;; --[Vendor specific confs]----------------------------------------------------------------------------------------
+
+;; Interactively Do Things
+(load (concat emacs-dir "rc/emacs-rc-ido.el"))
+
+;; Cedet conf
+(load (concat emacs-dir "rc/emacs-rc-cedet.el"))
+
+;; Yasnippet
+(load (concat emacs-dir "rc/emacs-rc-yasnippet.el"))
+
+;; --[Load common functions and hooks]----------------------------------------------------------------------------------------
 ;; Common functions
 (load (concat emacs-dir "rc/emacs-rc-common-functions.el"))
-
-;; Common hooks specific
-;; Definitions of common hooks
+;; Common hooks
 (load (concat emacs-dir "rc/emacs-rc-common-hooks.el"))
 
-;; Modes specific
+;; --[Flymake conf]----------------------------------------------------------------------------------------
+(load (concat emacs-dir "rc/emacs-rc-flymake.el"))
+
+;; --[Load editing mode confs]----------------------------------------------------------------------------------------
 ;; CCMode customization
+(load (concat emacs-dir "rc/emacs-rc-cc-mode-defs.el"))
 (load (concat emacs-dir "rc/emacs-rc-cc-mode.el"))
+(load (concat emacs-dir "rc/emacs-rc-cc-mode-flymake.el"))
 ;; Emacs lisp mode customization
 (load (concat emacs-dir "rc/emacs-rc-elisp-mode.el"))
 ;; Textile mode
 (load (concat emacs-dir "rc/emacs-rc-textile-mode.el"))
 
-;; ------------------------------------------------------------------------------------------
+;; --[Custom preferences]----------------------------------------------------------------------------------------
 
-;; Interactively Do Things
-(load (concat emacs-dir "rc/emacs-rc-ido.el"))
-
-
-;; Cedet conf
-(load (concat emacs-dir "rc/emacs-rc-cedet.el"))
-
-;; Load projects configuration
-(load (concat emacs-dir "rc/emacs-rc-cpp-projects-functions.el"))
-(load (concat emacs-dir "rc/emacs-rc-cpp-projects-defs.el"))
-
-;; Flymake conf
-(load (concat emacs-dir "rc/emacs-rc-flymake.el"))
-
-;; Yasnippet
-(load (concat emacs-dir "rc/emacs-rc-yasnippet.el"))
+;; Load cc-mode customizations
+(when (file-exists-p (concat emacs-dir "rc/emacs-rc-cc-mode-custom.el"))
+  (load (concat emacs-dir "rc/emacs-rc-cc-mode-custom.el"))
+)

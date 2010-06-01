@@ -1,7 +1,3 @@
-;; ede customization
-(require 'semantic-lex-spp)
-(global-ede-mode t) ; enable ede mode
-
 ;; my functions for EDE
 (defun alexott/ede-get-local-var (fname var)
   "fetch given variable var from :local-variables of project of file fname"
@@ -42,7 +38,7 @@
          (prj (ede-current-project current-dir))
          (root-dir (ede-project-root-directory prj))
          )
-    (concat "cd " root-dir "; make -j2")))
+    (concat "cd " root-dir "build/; cmake ..; make -j2")))
 
 ;;
 (defun alexott/gen-cmake-debug-compile-string ()
@@ -56,5 +52,4 @@
     (when (string-match root-dir current-dir)
       (setf subdir (substring current-dir (match-end 0))))
     (concat "cd " root-dir "build/" "; cmake ..; make -j2")))
-;;    (concat "cd " root-dir "Debug/" subdir "; make -j3")))
 
