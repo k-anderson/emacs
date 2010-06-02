@@ -2,13 +2,38 @@
 (ede-cpp-root-project "RI MAIN"
                       :name "RI MAIN Project"
                       :file "/mnt/sda6/alan/workspace/ufmg/master/ri/ri-git/ri_main/CMakeLists.txt"
-                      :include-path '("/src")
+                      :include-path '("src")
                       :system-include-path '("/opt/ri/include"
                                              "/usr/include/c++/4.4/")
                       :local-variables (list
                                         (cons 'compile-command 'alexott/gen-cmake-debug-compile-string)
                                         ))
 
+;; -------[RI SEARCH project definition]------------------------------------------------------
+(ede-cpp-root-project "RI SEARCH"
+                      :name "RI SEARCH Project"
+                      :file "/mnt/sda6/alan/workspace/ufmg/master/ri/ri-git/ri_search/CMakeLists.txt"
+                      :include-path '("src")
+                      :system-include-path '("/opt/ri/include"
+                                             "/opt/ri/include/thrift"
+                                             "/usr/include/c++/4.4/")
+                      :local-variables (list
+                                        (cons 'compile-command 'alexott/gen-cmake-debug-compile-string)
+                                        ))
+
+
+
+;; -------[SpireSearch project definition]------------------------------------------------------
+(ede-cpp-root-project "SpireSearch"
+                      :name "SpireSearch Project"
+                      :file "/mnt/sda6/alan/workspace/ufmg/master/spire/src/main/CMakeLists.txt"
+                      :include-path '("src")
+                      :system-include-path '("/opt/ri/include"
+                                             "/opt/ri/include/thrift"
+                                             "/usr/include/c++/4.4/")
+                      :local-variables (list
+                                        (cons 'compile-command 'alexott/gen-cmake-debug-compile-string)
+                                        ))
 
 ;; -------[Zunnit ZExtractor project definition]------------------------------------------------------
 (ede-cpp-root-project "zextractor"

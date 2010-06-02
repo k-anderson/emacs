@@ -16,7 +16,6 @@
                                           (dolist (word (oref prj include-path))
                                             (setq result (cons (concat "-I" (concat (ede-project-root-directory prj) word)) result)))
                                           (nreverse result)))
-          (message (mapconcat 'identity prj-include-local-paths " "))
 
           (set 'prj-include-system-paths (let ((result))
                                            (dolist (word (oref prj system-include-path))
