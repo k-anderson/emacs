@@ -14,6 +14,9 @@
 ;; --[Load emacs X confs]----------------------------------------------------------------------------------------
 (load (concat emacs-dir "rc/emacs-rc-editor.el"))
 
+;; --[Load desktop autosave]----------------------------------------------------------------------------------------
+(load (concat emacs-dir "rc/emacs-rc-autosave.el"))
+
 ;; --[Load theme confs]----------------------------------------------------------------------------------------
 ;; Load current theme (irblack)
 (load (concat emacs-dir "rc/emacs-rc-theme-irblack.el"))

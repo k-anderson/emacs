@@ -41,6 +41,6 @@
 (defun alancastro/common-keys-hook ()
   (local-set-key "\C-F" 'iwb)
   (local-set-key "\C-A" 'mark-whole-buffer)
-)
+  )
 ;; common keys for all files
 (add-hook 'find-file-hook 'alancastro/common-keys-hook)
