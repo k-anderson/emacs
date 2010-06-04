@@ -42,14 +42,21 @@
 (load (concat emacs-dir "rc/emacs-rc-flymake.el"))
 
 ;; --[Load editing mode confs]----------------------------------------------------------------------------------------
+
 ;; CCMode customization
 (load (concat emacs-dir "rc/emacs-rc-cc-mode-defs.el"))
 (load (concat emacs-dir "rc/emacs-rc-cc-mode.el"))
 (load (concat emacs-dir "rc/emacs-rc-cc-mode-flymake.el"))
+
 ;; Emacs lisp mode customization
 (load (concat emacs-dir "rc/emacs-rc-elisp-mode.el"))
+
 ;; Textile mode
 (load (concat emacs-dir "rc/emacs-rc-textile-mode.el"))
+
+;; PHP mode
+(load (concat emacs-dir "rc/emacs-rc-php-mode.el"))
+(load (concat emacs-dir "rc/emacs-rc-php-mode-flymake.el"))
 
 ;; --[Custom preferences]----------------------------------------------------------------------------------------
 

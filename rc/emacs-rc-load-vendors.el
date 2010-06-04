@@ -7,4 +7,5 @@
 (load-file (concat emacs-dir "/vendor/eldoc/eldoc.el"))
 (add-to-list 'load-path (concat emacs-dir "/vendor/yasnippet"))
 (load-file (concat emacs-dir "/vendor/textile/textile-mode.el"))
+(load-file (concat emacs-dir "/vendor/php/php-mode.el"))
 

@@ -1,6 +1,8 @@
 ;;flymake
 (require 'flymake)
 
+(setq temporary-file-directory "/tmp")
+
 ;; todo - simply clear all default rules?
 (setq flymake-allowed-file-name-masks (delete '("\\.c\\'" flymake-simple-make-init) flymake-allowed-file-name-masks))
 (setq flymake-allowed-file-name-masks (delete '("\\.cpp\\'" flymake-simple-make-init) flymake-allowed-file-name-masks))
