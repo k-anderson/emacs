@@ -32,6 +32,9 @@
 ;; Yasnippet
 (load (concat emacs-dir "rc/emacs-rc-yasnippet.el"))
 
+;; Org mode
+(load (concat emacs-dir "rc/emacs-rc-org-mode.el"))
+
 ;; --[Load common functions and hooks]----------------------------------------------------------------------------------------
 ;; Common functions
 (load (concat emacs-dir "rc/emacs-rc-common-functions.el"))
