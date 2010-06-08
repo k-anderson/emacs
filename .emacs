@@ -61,6 +61,9 @@
 (load (concat emacs-dir "rc/emacs-rc-php-mode.el"))
 (load (concat emacs-dir "rc/emacs-rc-php-mode-flymake.el"))
 
+;; Erlang mode
+(load (concat emacs-dir "rc/emacs-rc-erlang-mode.el"))
+
 ;; --[Custom preferences]----------------------------------------------------------------------------------------
 
 ;; Load cc-mode customizations
