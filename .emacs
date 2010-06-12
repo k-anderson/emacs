@@ -63,6 +63,7 @@
 
 ;; Erlang mode
 (load (concat emacs-dir "rc/emacs-rc-erlang-mode.el"))
+(load (concat emacs-dir "rc/emacs-rc-erlang-mode-flymake.el"))
 
 ;; --[Custom preferences]----------------------------------------------------------------------------------------
 

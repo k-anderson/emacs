@@ -17,6 +17,17 @@
 ;;no more problems with read-only files.
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 
+(defun flymake-custom-create-temp-file (file-name prefix)
+  "Create the file FILE-NAME in a unique directory in the temp directory."
+  (file-truename (expand-file-name (file-name-nondirectory file-name)
+                                   (expand-file-name  (int-to-string (random)) (flymake-get-temp-dir)))))
+
+(defun flymake-custom-cleanup ()
+  "Cleanup after `flymake-java-ecj-init' -- delete temp file and dirs."
+  (flymake-safe-delete-file flymake-temp-source-file-name)
+  (when flymake-temp-source-file-name
+    (flymake-safe-delete-directory (file-name-directory flymake-temp-source-file-name))))
+
 ;;shows flymake erros on minibuffer
 (defun my-flymake-show-help ()
   (when (get-char-property (point) 'flymake-overlay)
