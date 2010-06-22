@@ -65,9 +65,15 @@
 (load (concat emacs-dir "rc/emacs-rc-erlang-mode.el"))
 (load (concat emacs-dir "rc/emacs-rc-erlang-mode-flymake.el"))
 
+;; Java mode
+(load (concat emacs-dir "rc/emacs-rc-java-mode.el"))
+(load (concat emacs-dir "rc/emacs-rc-java-mode-flymake.el"))
+
 ;; --[Custom preferences]----------------------------------------------------------------------------------------
 
 ;; Load cc-mode customizations
 (when (file-exists-p (concat emacs-dir "rc/emacs-rc-cc-mode-custom.el"))
   (load (concat emacs-dir "rc/emacs-rc-cc-mode-custom.el"))
 )
+
+;; Automatic
