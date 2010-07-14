@@ -21,8 +21,11 @@
 ;; Flymake Module
 (load (concat emacs-dir "rc/flymake/flymake.el"))
 
-;; Flymake Module
+;; Cedet Module
 (load (concat emacs-dir "rc/cedet/cedet.el"))
+
+;; Auto-complete Module
+(load (concat emacs-dir "rc/auto-complete/auto-complete.el"))
 
 ;; Org-mode Module
 (load (concat emacs-dir "rc/org-mode/org-mode.el"))
@@ -32,6 +35,9 @@
 
 ;; Elisp mode module
 (load (concat emacs-dir "rc/elisp-mode/elisp-mode.el"))
+
+;; Python mode module
+(load (concat emacs-dir "rc/python-mode/python-mode.el"))
 
 ;; ;; --[Load all vendors]----------------------------------------------------------------------------------------
 ;; (load (concat emacs-dir "rc/emacs-rc-load-vendors.el"))

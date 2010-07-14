@@ -8,3 +8,6 @@ session*
 .emacs-semanticdb/
 rc/emacs-rc-cc-mode-custom.el
 target/*
+*.pyc
+\.hg/
+build/
