@@ -26,6 +26,10 @@
     (setq exec-path (cons (concat erlang-root-dir "/bin") exec-path))
     (require 'erlang-start)
 
+    ;; when starting an Erlang shell in Emacs, the node name
+    ;; by default should be "emacs"
+    (setq inferior-erlang-machine-options '("-sname" "emacs"))
+
     (add-to-list 'auto-mode-alist '("\\.erl?$" . erlang-mode))
     (add-to-list 'auto-mode-alist '("\\.hrl?$" . erlang-mode))
 

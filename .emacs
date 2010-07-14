@@ -6,74 +6,67 @@
 ;; Sets emacs-dir to the current directory where .emacs is placed in.
 (setq emacs-dir (file-name-directory (file-truename (or load-file-name buffer-file-name))))
 
-;; Load rc files
+;; Modules
+;; To habilitate a module just include it's rc file.
 
-;; --[Load all vendors]----------------------------------------------------------------------------------------
-(load (concat emacs-dir "rc/emacs-rc-load-vendors.el"))
+;; Commons (Required module)
+(load (concat emacs-dir "rc/commons/commons.el"))
 
-;; --[Load emacs X confs]----------------------------------------------------------------------------------------
-(load (concat emacs-dir "rc/emacs-rc-editor.el"))
+;; Misc Module
+(load (concat emacs-dir "rc/misc/misc.el"))
 
-;; --[Load desktop autosave]----------------------------------------------------------------------------------------
-(load (concat emacs-dir "rc/emacs-rc-autosave.el"))
+;; Yasnippet Module
+(load (concat emacs-dir "rc/yasnippet/yasnippet.el"))
 
-;; --[Load theme confs]----------------------------------------------------------------------------------------
-;; Load current theme (irblack)
-(load (concat emacs-dir "rc/emacs-rc-theme-irblack.el"))
+;; Flymake Module
+(load (concat emacs-dir "rc/flymake/flymake.el"))
 
-;; --[Vendor specific confs]----------------------------------------------------------------------------------------
+;; Flymake Module
+(load (concat emacs-dir "rc/cedet/cedet.el"))
 
-;; Interactively Do Things
-(load (concat emacs-dir "rc/emacs-rc-ido.el"))
+;; Org-mode Module
+(load (concat emacs-dir "rc/org-mode/org-mode.el"))
 
-;; Cedet conf
-(load (concat emacs-dir "rc/emacs-rc-cedet.el"))
+;; Textile mode module
+(load (concat emacs-dir "rc/textile-mode/textile-mode.el"))
 
-;; Yasnippet
-(load (concat emacs-dir "rc/emacs-rc-yasnippet.el"))
+;; Elisp mode module
+(load (concat emacs-dir "rc/elisp-mode/elisp-mode.el"))
 
-;; Org mode
-(load (concat emacs-dir "rc/emacs-rc-org-mode.el"))
+;; ;; --[Load all vendors]----------------------------------------------------------------------------------------
+;; (load (concat emacs-dir "rc/emacs-rc-load-vendors.el"))
 
-;; --[Load common functions and hooks]----------------------------------------------------------------------------------------
-;; Common functions
-(load (concat emacs-dir "rc/emacs-rc-common-functions.el"))
-;; Common hooks
-(load (concat emacs-dir "rc/emacs-rc-common-hooks.el"))
+;; ;; Cedet conf
+;; (load (concat emacs-dir "rc/emacs-rc-cedet.el"))
 
-;; --[Flymake conf]----------------------------------------------------------------------------------------
-(load (concat emacs-dir "rc/emacs-rc-flymake.el"))
+;; ;; --[Load editing mode confs]----------------------------------------------------------------------------------------
 
-;; --[Load editing mode confs]----------------------------------------------------------------------------------------
+;; ;; CCMode customization
+;; (load (concat emacs-dir "rc/emacs-rc-cc-mode-defs.el"))
+;; (load (concat emacs-dir "rc/emacs-rc-cc-mode.el"))
+;; (load (concat emacs-dir "rc/emacs-rc-cc-mode-flymake.el"))
 
-;; CCMode customization
-(load (concat emacs-dir "rc/emacs-rc-cc-mode-defs.el"))
-(load (concat emacs-dir "rc/emacs-rc-cc-mode.el"))
-(load (concat emacs-dir "rc/emacs-rc-cc-mode-flymake.el"))
+;; ;; PHP mode
+;; (load (concat emacs-dir "rc/emacs-rc-php-mode.el"))
+;; (load (concat emacs-dir "rc/emacs-rc-php-mode-flymake.el"))
 
-;; Emacs lisp mode customization
-(load (concat emacs-dir "rc/emacs-rc-elisp-mode.el"))
+;; ;; Erlang mode
+;; (load (concat emacs-dir "rc/emacs-rc-erlang-mode.el"))
+;; (load (concat emacs-dir "rc/emacs-rc-erlang-mode-flymake.el"))
 
-;; Textile mode
-(load (concat emacs-dir "rc/emacs-rc-textile-mode.el"))
+;; ;; Java mode
+;; (load (concat emacs-dir "rc/emacs-rc-java-mode.el"))
+;; (load (concat emacs-dir "rc/emacs-rc-java-mode-flymake.el"))
 
-;; PHP mode
-(load (concat emacs-dir "rc/emacs-rc-php-mode.el"))
-(load (concat emacs-dir "rc/emacs-rc-php-mode-flymake.el"))
+;; ;; Python mode
+;; (load (concat emacs-dir "rc/emacs-rc-python-mode.el"))
+;; (load (concat emacs-dir "rc/emacs-rc-python-mode-flymake.el"))
 
-;; Erlang mode
-(load (concat emacs-dir "rc/emacs-rc-erlang-mode.el"))
-(load (concat emacs-dir "rc/emacs-rc-erlang-mode-flymake.el"))
+;; ;; --[Custom preferences]----------------------------------------------------------------------------------------
 
-;; Java mode
-(load (concat emacs-dir "rc/emacs-rc-java-mode.el"))
-(load (concat emacs-dir "rc/emacs-rc-java-mode-flymake.el"))
+;; ;; Load cc-mode customizations
+;; (when (file-exists-p (concat emacs-dir "rc/emacs-rc-cc-mode-custom.el"))
+;;   (load (concat emacs-dir "rc/emacs-rc-cc-mode-custom.el"))
+;; )
 
-;; --[Custom preferences]----------------------------------------------------------------------------------------
-
-;; Load cc-mode customizations
-(when (file-exists-p (concat emacs-dir "rc/emacs-rc-cc-mode-custom.el"))
-  (load (concat emacs-dir "rc/emacs-rc-cc-mode-custom.el"))
-)
-
-;; Automatic
+;; ;; Automatic

@@ -8,10 +8,9 @@
   (local-set-key "\C-ca" 'org-agenda)
   (local-set-key "\C-cb" 'org-iswitchb)
   )
+
 (add-hook 'org-mode-hook 'alancastro/org-mode-common-hook)
 (setq org-log-done t)
-
-(setq org-agenda-files (quote ("~/org/master.org")))
 
 (setq org-todo-keywords (quote ((sequence "TODO(t)" "STARTED(s!)" "|" "DONE(d!/!)")
                                 (sequence "WAITING(w@/!)" "SOMEDAY(S!)" "OPEN(O@)" "|" "CANCELLED(c@/!)")
@@ -32,3 +31,8 @@
 
 (setq org-use-fast-todo-selection t)
 
+(add-to-list 'alancastro/trailing-whitespace-modes "org-mode")
+(add-to-list 'alancastro/untabify-modes "org-mode")
+
+;; Load agenda files.
+(load (concat emacs-dir "rc/org-mode/agenda.el"))
