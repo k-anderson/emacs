@@ -1,49 +1,89 @@
 h1. Emacs files
 
-h2. Requirements
-
-emacs-goodies-el emacs23-common emacs23-el emacsen-common
-
 h2. Introduction
 
-My emacs files are organized by modules...
+My emacs configuration files. 
+
+The idea to publish this files is to make thing a little bit easier for emacs new comers.
+
+The idea of this small documentation is to make things easier to people that want to have an Emacs with some pre-configured modes. 
+
+New to emacs? Take a look at: 
+* http://www.emacswiki.org/emacs-en/EmacsNewbie
+* http://www.math.uh.edu/~bgb/emacs_keys.html
+
+h2. Requirements
+
+Ubuntu packages:
+* emacs23-common 
+* emacs23-el 
+* emacs-goodies-el 
+* emacsen-common
+
+h2. Installation
+
+@git clone git://github.com/alancastro/emacs.git@
+@ln -s ~/.emacs directory/.emacs@
 
 h2. Packages
 
+My emacs configurations files are organized into small packages.
+
+If you don't want to use some of the packages, just remove the "package-name" from *load-cfg-files* function.
+
 h3. Commons
 
-The commons package has definitions of useful functions and hooks to be used in every mode.
+The commons package has definitions of useful variables, functions and hooks that are used on all of the other packages.
 
-Defined keys:
-* \C-c: -> 'uncomment-region
-* \C-c; -> 'comment-region
-* \C-c\C-c -> 'comment-region
-* \C-F -> 'commons/indent-whole-buffer
-* \C-A -> 'mark-whole-buffer
+Useful key bindings:
+* *\C-c;* and *\C-c \C-c*  -> Comments a selected region.
+* *\C-c:* -> Uncomment a selected region.
+* *\C-F* -> Indents the whole buffer.
+* *\C-A* -> Selects everything in a buffer.
 
-h3. "Ido":http://www.emacswiki.org/emacs/InteractivelyDoThings
+h3. Ido
 
-This package is just awsome! But if you don't want to use it, just remove "ido" from the *load-cfg-files* in .emacs file.
+This package is just awsome!
+
+Useful key bindings:
+* *\C-x \C-f* -> Finds a file using Ido.
+* *\C-x b* -> Switches buffers using Ido.
+
+References:
+"http://www.emacswiki.org/emacs/InteractivelyDoThings":http://www.emacswiki.org/emacs/InteractivelyDoThings
 
 h3. Theme
 
-Currently I'm using the "irblack":http://github.com/dz/ir_black_emacs theme if you want to change that just edit configs/theme.el.
+The theme package sets the current used theme. I'm using "irblack":http://github.com/dz/ir_black_emacs theme but if you want to change that just edit *configs/theme.el*.
 
 h3. Editor
 
-This package contains the settings for the emacs editor itself like font setup, remove the menu, etc. I'm using the Monaco font, if you don't have it the TTF is on the vendor/fonts directory.
+This package contains some useful settings for emacs editor, like font-face, font-size, menu appearance, etc. The current setting is using *Monaco* font, if you don't have it installed in your system, use the TTF that is placed on *vendor/fonts* directory.
 
-h3. "yasnippet":http://code.google.com/p/yasnippet/
+h3. Yasnippet
 
-Another useful package that I use. Use <TAB> to use it. If you don't want to use this remove the "yasnippet" from the *load-cfg-files*.
+Another useful package that I use. With this activated you can use *<TAB>* to autocomplete using some pre-defined templates. They are placed at *vendor/yasnippet/snippets*
 
-h3. "Flymake":http://www.emacswiki.org/emacs/FlyMake
+Useful key bindings:
+* *<TAB>* -> Autocomplete with yasnippet.
+
+References:
+http://code.google.com/p/yasnippet/
+http://www.emacswiki.org/emacs/Yasnippet
+
+h3. Flymake
 
 This package contains some useful functions to use for programming mode flymake.
 
-h3. "Cedet":http://www.emacswiki.org/emacs/CollectionOfEmacsDevelopmentEnvironmentTools
+References:
+http://www.emacswiki.org/emacs/FlyMake
+
+h3. Cedet
 
 Cedet package!
+
+References:
+http://www.emacswiki.org/emacs/CollectionOfEmacsDevelopmentEnvironmentTools
 
 h3. "Auto-complete mode":http://www.emacswiki.org/emacs/AutoComplete
 
