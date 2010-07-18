@@ -4,13 +4,11 @@ h2. Introduction
 
 My emacs configuration files. 
 
-The idea to publish this files is to make thing a little bit easier for emacs new comers.
-
-The idea of this small documentation is to make things easier to people that want to have an Emacs with some pre-configured modes. 
+Just follow the steps below to get everything installed.
 
 New to emacs? Take a look at: 
-* http://www.emacswiki.org/emacs-en/EmacsNewbie
-* http://www.math.uh.edu/~bgb/emacs_keys.html
+* "http://www.emacswiki.org/emacs-en/EmacsNewbie":http://www.emacswiki.org/emacs-en/EmacsNewbie
+* "http://www.math.uh.edu/~bgb/emacs_keys.html":http://www.math.uh.edu/~bgb/emacs_keys.html
 
 h2. Requirements
 
@@ -23,7 +21,10 @@ Ubuntu packages:
 h2. Installation
 
 @git clone git://github.com/alancastro/emacs.git@
+
 @ln -s ~/.emacs directory/.emacs@
+
+Now follow each package documentation to see if there is anything else to be done.
 
 h2. Packages
 
@@ -33,9 +34,7 @@ If you don't want to use some of the packages, just remove the "package-name" fr
 
 h3. Commons
 
-The commons package has definitions of useful variables, functions and hooks that are used on all of the other packages.
-
-Useful key bindings:
+*Key bindings*:
 * *\C-c;* and *\C-c \C-c*  -> Comments a selected region.
 * *\C-c:* -> Uncomment a selected region.
 * *\C-F* -> Indents the whole buffer.
@@ -43,18 +42,16 @@ Useful key bindings:
 
 h3. Ido
 
-This package is just awsome!
-
-Useful key bindings:
+*Key bindings*:
 * *\C-x \C-f* -> Finds a file using Ido.
 * *\C-x b* -> Switches buffers using Ido.
 
-References:
-"http://www.emacswiki.org/emacs/InteractivelyDoThings":http://www.emacswiki.org/emacs/InteractivelyDoThings
+*References*:
+* "http://www.emacswiki.org/emacs/InteractivelyDoThings":http://www.emacswiki.org/emacs/InteractivelyDoThings
 
 h3. Theme
 
-The theme package sets the current used theme. I'm using "irblack":http://github.com/dz/ir_black_emacs theme but if you want to change that just edit *configs/theme.el*.
+I'm using "irblack":http://github.com/dz/ir_black_emacs theme but if you want to change that just edit *configs/theme.el*.
 
 h3. Editor
 
@@ -62,50 +59,45 @@ This package contains some useful settings for emacs editor, like font-face, fon
 
 h3. Yasnippet
 
-Another useful package that I use. With this activated you can use *<TAB>* to autocomplete using some pre-defined templates. They are placed at *vendor/yasnippet/snippets*
+*Key bindings*:
+* *TAB* -> Autocomplete with yasnippet.
 
-Useful key bindings:
-* *<TAB>* -> Autocomplete with yasnippet.
-
-References:
-http://code.google.com/p/yasnippet/
-http://www.emacswiki.org/emacs/Yasnippet
+*References*:
+* "http://code.google.com/p/yasnippet/":http://code.google.com/p/yasnippet/
+* "http://www.emacswiki.org/emacs/Yasnippet":http://www.emacswiki.org/emacs/Yasnippet
 
 h3. Flymake
 
-This package contains some useful functions to use for programming mode flymake.
-
-References:
-http://www.emacswiki.org/emacs/FlyMake
+*References*:
+* "http://www.emacswiki.org/emacs/FlyMake":http://www.emacswiki.org/emacs/FlyMake
 
 h3. Cedet
 
-Cedet package!
+*References*:
+* "http://www.emacswiki.org/emacs/CollectionOfEmacsDevelopmentEnvironmentTools":http://www.emacswiki.org/emacs/CollectionOfEmacsDevelopmentEnvironmentTools
+* "http://alexott.net/en/writings/emacs-devenv/EmacsCedet.html":http://alexott.net/en/writings/emacs-devenv/EmacsCedet.html
 
-References:
-http://www.emacswiki.org/emacs/CollectionOfEmacsDevelopmentEnvironmentTools
+h3. Auto-complete mode
 
-h3. "Auto-complete mode":http://www.emacswiki.org/emacs/AutoComplete
+*References*:
+* "http://www.emacswiki.org/emacs/AutoComplete":http://www.emacswiki.org/emacs/AutoComplete
 
-Auto-complete package.
+h3. Org-mode
 
-h3. "Org-mode":http://www.emacswiki.org/emacs/OrgMode
+A very good tutorial for *org-mode*: "http://doc.norang.ca/org-mode.html":http://doc.norang.ca/org-mode.html.
 
-Org-mode package. Keys used:...
+*References*:
+* "http://www.emacswiki.org/emacs/OrgMode":http://www.emacswiki.org/emacs/OrgMode
+* "http://orgmode.org/":http://orgmode.org/
 
-h3. "Textile-mode":http://www.emacswiki.org/emacs/TextileMode
+h3. Textile-mode
 
-Textile-mode package...
+*References*:
+"http://www.emacswiki.org/emacs/TextileMode":http://www.emacswiki.org/emacs/TextileMode
 
-h3. Elisp-mode
+h3. Python-mode
 
-Simple elisp programming mode.
-
-h3. "Python-mode":https://launchpad.net/python-mode
-
-Python mode package. Keys used:...
-
-Requirements:
+*Installation*:
 # chmod +x vendor/python/pychecker
 # cd vendor/rope/
 # sudo easy_install rope
@@ -114,9 +106,27 @@ Requirements:
 # cd vendor/python/Pymacs
 # sudo python setup.py install
 
-h3. "C/C++-Mode":http://cc-mode.sourceforge.net/
+*Key bindings*:
+* For python-mode key bindings: Open a *.py file and execute *\C-h m*.
+* For rope key bindings: "http://bitbucket.org/agr/ropemacs/src/":http://bitbucket.org/agr/ropemacs/src/
 
-C/C++ mode... Keys:...
+*References*:
+http://launchpad.net/python-mode
+
+h3. C/C++-Mode
+
+*Key bindings*:
+* *\C-RETURN* -> 'semantic-ia-complete-symbol-menu
+* *\C-c?* -> 'semantic-ia-complete-symbol
+* *\C-c>* -> 'semantic-complete-analyze-inline
+* *\C-c=* -> 'semantic-decoration-include-visit
+* *\C-cj* -> 'semantic-ia-fast-jump
+* *\C-cq* -> 'semantic-ia-show-doc
+* *\C-cs* -> 'semantic-ia-show-summary
+* *\C-cp* -> 'semantic-analyze-proto-impl-toggle
+
+*References*:
+"http://cc-mode.sourceforge.net/":http://cc-mode.sourceforge.net/
 
 h3. Erlang-mode
 

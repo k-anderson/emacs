@@ -1,5 +1,5 @@
 ;; Load Cedet
-(load-file (concat emacs-dir "/vendor/cedet/common/cedet.el"))
+(load-file (concat emacs-dir "vendor/cedet/common/cedet.el"))
 
 (setq semanticdb-default-save-directory (concat emacs-dir "/.emacs-semanticdb")) ; getting rid of semantic.caches
 
@@ -20,9 +20,6 @@
 (require 'eassist)
 
 (add-hook 'semantic-init-hooks 'cedet/hook)
-;; (add-hook 'lisp-mode-hook 'cedet/hook)
-;; (add-hook 'scheme-mode-hook 'cedet/hook)
-;;
 
 ;; ctags
 (require 'semanticdb-ectag)
