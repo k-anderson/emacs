@@ -17,6 +17,7 @@ Ubuntu packages:
 * emacs23-el 
 * emacs-goodies-el 
 * emacsen-common
+* exuberant-ctags
 
 h2. Installation
 
