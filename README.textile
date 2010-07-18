@@ -74,6 +74,10 @@ h3. Flymake
 
 h3. Cedet
 
+*Installation*:
+* @cd vendor/cedet/@
+* @make@
+
 *References*:
 * "http://www.emacswiki.org/emacs/CollectionOfEmacsDevelopmentEnvironmentTools":http://www.emacswiki.org/emacs/CollectionOfEmacsDevelopmentEnvironmentTools
 * "http://alexott.net/en/writings/emacs-devenv/EmacsCedet.html":http://alexott.net/en/writings/emacs-devenv/EmacsCedet.html

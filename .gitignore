@@ -11,3 +11,4 @@ target/*
 *.pyc
 \.hg/
 build/
+custom/
