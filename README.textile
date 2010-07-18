@@ -104,7 +104,7 @@ h3. Python-mode
 # sudo easy_install rope
 # sudo easy_install ropemode
 # sudo easy_install ropemacs
-# cd vendor/python/Pymacs
+# cd vendor/python/pymacs
 # sudo python setup.py install
 
 *Key bindings*:
