@@ -9,8 +9,8 @@
 
 ;; -- commons hooks
 
-;; common setting for multiple programming modes
 (defun commons/common-hook ()
+  "common setting for multiple programming modes"
   (local-set-key "\C-c:" 'uncomment-region)
   (local-set-key "\C-c;" 'comment-region)
   (local-set-key "\C-c\C-c" 'comment-region)
@@ -19,13 +19,13 @@
   (auto-save-mode nil)
   )
 
-;; show FIXME/TODO/BUG keywords
 (defun commons/show-prog-keywords ()
-  ;; highlight additional keywords
+  "highlight FIXME/TODO/BUG keywords"
   (font-lock-add-keywords nil '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))
   (font-lock-add-keywords nil '(("\\<\\(DONE\\):" 1 font-lock-doc-face t))))
 
-;; clean trailing whitespaces automatically
+;; add a mode editing mode here to clean trailing whitespaces automatically
+;; ex: (add-to-list 'commons/trailing-whitespace-modes "java-mode")
 (setq commons/trailing-whitespace-modes '())
 
 (defun commons/trailing-whitespace-hook ()

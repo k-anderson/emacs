@@ -6,10 +6,66 @@ emacs-goodies-el emacs23-common emacs23-el emacsen-common
 
 h2. Introduction
 
-Write a little about the codes..
+My emacs files are organized by modules...
 
-h2. Python-Mode
+h2. Packages
 
+h3. Commons
+
+The commons package has definitions of useful functions and hooks to be used in every mode.
+
+Defined keys:
+* \C-c: -> 'uncomment-region
+* \C-c; -> 'comment-region
+* \C-c\C-c -> 'comment-region
+* \C-F -> 'commons/indent-whole-buffer
+* \C-A -> 'mark-whole-buffer
+
+h3. "Ido":http://www.emacswiki.org/emacs/InteractivelyDoThings
+
+This package is just awsome! But if you don't want to use it, just remove "ido" from the *load-cfg-files* in .emacs file.
+
+h3. Theme
+
+Currently I'm using the "irblack":http://github.com/dz/ir_black_emacs theme if you want to change that just edit configs/theme.el.
+
+h3. Editor
+
+This package contains the settings for the emacs editor itself like font setup, remove the menu, etc. I'm using the Monaco font, if you don't have it the TTF is on the vendor/fonts directory.
+
+h3. "yasnippet":http://code.google.com/p/yasnippet/
+
+Another useful package that I use. Use <TAB> to use it. If you don't want to use this remove the "yasnippet" from the *load-cfg-files*.
+
+h3. "Flymake":http://www.emacswiki.org/emacs/FlyMake
+
+This package contains some useful functions to use for programming mode flymake.
+
+h3. "Cedet":http://www.emacswiki.org/emacs/CollectionOfEmacsDevelopmentEnvironmentTools
+
+Cedet package!
+
+h3. "Auto-complete mode":http://www.emacswiki.org/emacs/AutoComplete
+
+Auto-complete package.
+
+h3. "Org-mode":http://www.emacswiki.org/emacs/OrgMode
+
+Org-mode package. Keys used:...
+
+h3. "Textile-mode":http://www.emacswiki.org/emacs/TextileMode
+
+Textile-mode package...
+
+h3. Elisp-mode
+
+Simple elisp programming mode.
+
+h3. "Python-mode":https://launchpad.net/python-mode
+
+Python mode package. Keys used:...
+
+Requirements:
 # chmod +x vendor/python/pychecker
 # cd vendor/rope/
 # sudo easy_install rope
@@ -18,8 +74,19 @@ h2. Python-Mode
 # cd vendor/python/Pymacs
 # sudo python setup.py install
 
+h3. "C/C++-Mode":http://cc-mode.sourceforge.net/
 
-h2. cc-mode
+C/C++ mode... Keys:...
 
-Pre-requisites..
+h3. Erlang-mode
+
+Erlang mode... Keys....
+
+h3. "Php-mode":http://www.emacswiki.org/emacs/PhpMode
+
+Php mode... Keys:...
+
+h3. "Java-mode":http://www.emacswiki.org/emacs/JavaDevelopmentEnvironment
+
+Java mode.. Keys:...
 

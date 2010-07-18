@@ -23,6 +23,7 @@
 		  "cedet"
 		  "auto-complete"
 		  "org-mode"
+		  "textile-mode"
 		  "elisp-mode"
 		  "python-mode"
 		  "cc-mode"

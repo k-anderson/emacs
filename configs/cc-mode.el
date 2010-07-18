@@ -153,4 +153,4 @@
     (concat "cd " root-dir "build/" "; cmake ..; make -j2")))
 
 ;; --projects definitions
-(load-file (concat emacs-dir "custom/c-mode-projects.el"))
+(load-file (concat emacs-dir "custom/cc-mode-projects.el"))
