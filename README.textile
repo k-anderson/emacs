@@ -10,9 +10,16 @@ New to emacs? Take a look at:
 * "http://www.emacswiki.org/emacs-en/EmacsNewbie":http://www.emacswiki.org/emacs-en/EmacsNewbie
 * "http://www.math.uh.edu/~bgb/emacs_keys.html":http://www.math.uh.edu/~bgb/emacs_keys.html
 
+h2. Tips
+
+* Run *\C-h m* to get information and key bindings for the current buffer mode.
+
 h2. Requirements
 
 Ubuntu packages:
+* build-essential
+* texinfo
+* python-setuptools
 * emacs23-common 
 * emacs23-el 
 * emacs-goodies-el 
@@ -23,7 +30,7 @@ h2. Installation
 
 @git clone git://github.com/alancastro/emacs.git@
 
-@ln -s ~/.emacs directory/.emacs@
+@ln -s emacs-files-directory/.emacs ~/.emacs@
 
 Now follow each package documentation to see if there is anything else to be done.
 
@@ -61,7 +68,7 @@ This package contains some useful settings for emacs editor, like font-face, fon
 h3. Yasnippet
 
 *Key bindings*:
-* *TAB* -> Autocomplete with yasnippet.
+* *Shift+TAB* (<backtab>)  -> Autocomplete with yasnippet.
 
 *References*:
 * "http://code.google.com/p/yasnippet/":http://code.google.com/p/yasnippet/
@@ -76,7 +83,7 @@ h3. Cedet
 
 *Installation*:
 * @cd vendor/cedet/@
-* @make@
+* @emacs -Q -l cedet-build.el -f cedet-build@
 
 *References*:
 * "http://www.emacswiki.org/emacs/CollectionOfEmacsDevelopmentEnvironmentTools":http://www.emacswiki.org/emacs/CollectionOfEmacsDevelopmentEnvironmentTools
@@ -112,7 +119,6 @@ h3. Python-mode
 # sudo python setup.py install
 
 *Key bindings*:
-* For python-mode key bindings: Open a *.py file and execute *\C-h m*.
 * For rope key bindings: "http://bitbucket.org/agr/ropemacs/src/":http://bitbucket.org/agr/ropemacs/src/
 
 *References*:
@@ -120,28 +126,23 @@ http://launchpad.net/python-mode
 
 h3. C/C++-Mode
 
-*Key bindings*:
-* *\C-RETURN* -> 'semantic-ia-complete-symbol-menu
-* *\C-c?* -> 'semantic-ia-complete-symbol
-* *\C-c>* -> 'semantic-complete-analyze-inline
-* *\C-c=* -> 'semantic-decoration-include-visit
-* *\C-cj* -> 'semantic-ia-fast-jump
-* *\C-cq* -> 'semantic-ia-show-doc
-* *\C-cs* -> 'semantic-ia-show-summary
-* *\C-cp* -> 'semantic-analyze-proto-impl-toggle
-
 *References*:
 "http://cc-mode.sourceforge.net/":http://cc-mode.sourceforge.net/
 
 h3. Erlang-mode
 
-Erlang mode... Keys....
+*References*:
+* "http://on-erlang.blogspot.com/2007/04/getting-to-know-erlang-mode.html":http://on-erlang.blogspot.com/2007/04/getting-to-know-erlang-mode.html
+* "http://www.erlang.org/doc/man/erlang.el.html":http://www.erlang.org/doc/man/erlang.el.html
+* "http://www.emacswiki.org/emacs/FlymakeErlang":http://www.emacswiki.org/emacs/FlymakeErlang
 
-h3. "Php-mode":http://www.emacswiki.org/emacs/PhpMode
+h3. PHP-mode
 
-Php mode... Keys:...
+*Reference*:
+* "http://www.emacswiki.org/emacs/PhpMode":http://www.emacswiki.org/emacs/PhpMode
 
-h3. "Java-mode":http://www.emacswiki.org/emacs/JavaDevelopmentEnvironment
+h3. Java-mode
 
-Java mode.. Keys:...
+*References*:
+"http://www.emacswiki.org/emacs/JavaDevelopmentEnvironment":http://www.emacswiki.org/emacs/JavaDevelopmentEnvironment
 

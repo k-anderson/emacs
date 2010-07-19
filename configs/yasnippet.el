@@ -2,6 +2,7 @@
 (add-to-list 'load-path (concat emacs-dir "/vendor/yasnippet"))
 
 (require 'yasnippet) ;; not yasnippet-bundle
+(setq yas/trigger-key "<backtab>")
 (yas/initialize)
 (setq yasnippet-dir (concat emacs-dir "/vendor/yasnippet/snippets"))
 (yas/load-directory yasnippet-dir)
