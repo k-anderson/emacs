@@ -6,6 +6,8 @@ My emacs configuration files.
 
 Just follow the steps below to get everything installed.
 
+I have to say thanks to Alexott who distributed his emacs files in Github. I used a lot of code from there. So here is a link to his files: "http://github.com/alexott/emacs-configs":http://github.com/alexott/emacs-configs.
+
 New to emacs? Take a look at: 
 * "http://www.emacswiki.org/emacs-en/EmacsNewbie":http://www.emacswiki.org/emacs-en/EmacsNewbie
 * "http://www.math.uh.edu/~bgb/emacs_keys.html":http://www.math.uh.edu/~bgb/emacs_keys.html
@@ -38,7 +40,7 @@ h2. Packages
 
 My emacs configurations files are organized into small packages.
 
-If you don't want to use some of the packages, just remove the "package-name" from *load-cfg-files* function.
+If you don't want to use some of the packages, just remove the "package-name" from *load-cfg-files* function in the *.emacs* file.
 
 h3. Commons
 
