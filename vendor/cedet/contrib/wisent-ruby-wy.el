@@ -2,8 +2,8 @@
 
 ;;; Copyright (C) 2007 Daniel Debertin (debertin@gmail.com)
 
-;; Author: Alan Castro <alan@matrix>
-;; Created: 2010-05-28 23:36:14-0300
+;; Author: Alan Castro <alan@rabico>
+;; Created: 2010-07-19 09:25:10-0300
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

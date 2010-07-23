@@ -112,13 +112,13 @@ h3. Textile-mode
 h3. Python-mode
 
 *Installation*:
-# chmod +x vendor/python/pychecker
-# cd vendor/rope/
-# sudo easy_install rope
-# sudo easy_install ropemode
-# sudo easy_install ropemacs
-# cd vendor/python/pymacs
-# sudo python setup.py install
+# @chmod +x vendor/python/pychecker@
+# @cd vendor/rope/@
+# @sudo easy_install rope@
+# @sudo easy_install ropemode@
+# @sudo easy_install ropemacs@
+# @cd vendor/python/pymacs@
+# @sudo python setup.py install@
 
 *Key bindings*:
 * For rope key bindings: "http://bitbucket.org/agr/ropemacs/src/":http://bitbucket.org/agr/ropemacs/src/

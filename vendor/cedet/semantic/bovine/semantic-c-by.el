@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Eric M. Ludlam
 
-;; Author: Alan Castro <alan@matrix>
-;; Created: 2010-05-28 23:35:51-0300
+;; Author: Alan Castro <alan@rabico>
+;; Created: 2010-07-19 09:24:51-0300
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

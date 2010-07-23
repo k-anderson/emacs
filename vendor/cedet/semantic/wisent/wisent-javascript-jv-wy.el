@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2005 Joakim Verona, Eric Ludlam
 
-;; Author: Alan Castro <alan@matrix>
-;; Created: 2010-05-28 23:35:47-0300
+;; Author: Alan Castro <alan@rabico>
+;; Created: 2010-07-19 09:24:47-0300
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 
