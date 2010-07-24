@@ -29,7 +29,8 @@
 		  "cc-mode"
 		  "erlang-mode"
 		  "php-mode"
-                  "java-mode"))
+                  "java-mode"
+		  "javascript-mode"))
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
