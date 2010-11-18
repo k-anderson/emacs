@@ -12,3 +12,4 @@ target/*
 \.hg/
 build/
 custom/
+target/

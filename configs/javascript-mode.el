@@ -7,9 +7,9 @@
 
 (load-file (concat emacs-dir "vendor/javascript/espresso-mode/espresso.el"))
 (autoload 'espresso-mode "espresso")
-(setq espresso-indent-level 2
+(setq espresso-indent-level 4
       indent-tabs-mode nil
-      c-basic-offset 2)
+      c-basic-offset 4)
 
 (defun my-js2-indent-function ()
   (interactive)
@@ -20,14 +20,14 @@
            (offset (- (current-column) (current-indentation)))
            (indentation (espresso--proper-indentation parse-status))
            node)
-      
+
       (save-excursion
-        
+
         ;; I like to indent case and labels to half of the tab width
         (back-to-indentation)
         (if (looking-at "case\\s-")
-            (setq indentation (+ indentation (/ espresso-indent-level 2))))
-        
+            (setq indentation (+ indentation (/ espresso-indent-level 4))))
+
         ;; consecutive declarations in a var statement are nice if
         ;; properly aligned, i.e:
         ;;
@@ -38,7 +38,7 @@
                    (= js2-NAME (js2-node-type node))
                    (= js2-VAR (js2-node-type (js2-node-parent node))))
           (setq indentation (+ 4 indentation))))
-      
+
       (indent-line-to indentation)
       (when (> offset 0) (forward-char offset)))))
 
@@ -68,14 +68,14 @@
 
 (defun my-js2-mode-hook ()
   (require 'espresso)
-  (setq espresso-indent-level 2
+  (setq espresso-indent-level 4
         indent-tabs-mode nil
-        c-basic-offset 2)
+        c-basic-offset 4)
   (c-toggle-auto-state 0)
   (c-toggle-hungry-state 1)
   (set (make-local-variable 'indent-line-function) 'my-js2-indent-function)
   (define-key js2-mode-map [(meta control |)] 'cperl-lineup)
-  (define-key js2-mode-map [(meta control \;)] 
+  (define-key js2-mode-map [(meta control \;)]
     '(lambda()
        (interactive)
        (insert "/* -----[ ")
@@ -87,42 +87,20 @@
   (define-key js2-mode-map [(control d)] 'c-electric-delete-forward)
   (define-key js2-mode-map [(control meta q)] 'my-indent-sexp)
   (if (featurep 'js2-highlight-vars)
-    (js2-highlight-vars-mode))
+      (js2-highlight-vars-mode))
   (message "My JS2 hook"))
 
 (defun my-espresso-mode-hook ()
   (require 'espresso)
-  (setq espresso-indent-level 2
+  (setq espresso-indent-level 4
         indent-tabs-mode nil
-        c-basic-offset 2)
+        c-basic-offset 4)
   (c-toggle-auto-state 0)
   (c-toggle-hungry-state 1)
 
   (message "My espresso hook"))
 
 (add-hook 'js2-mode-hook 'my-js2-mode-hook)
+(add-hook 'js2-mode-hook 'commons/common-hook)
 ;;(add-hook 'js2-mode-hook 'idle-highlight)
 
-;;(add-hook 'espresso-mode-hook 'my-espresso-mode-hook)
-;;(add-hook 'espresso-mode-hook 'idle-highlight)
-;;(add-hook 'espresso-mode-hook 'moz-minor-mode)
-;;(add-hook 'espresso-mode-hook 'esk-paredit-nonlisp)
-;;(add-hook 'espresso-mode-hook 'run-coding-hook)
-;;(setq espresso-indent-level 2)
-
-;; If you prefer js2-mode, use this instead:
-;; (add-to-list 'auto-mode-alist '("\\.js$" . espresso-mode))
-
-;(eval-after-load 'espresso
-;  '(progn (define-key espresso-mode-map "{" 'paredit-open-curly)
-;          (define-key espresso-mode-map "}" 'paredit-close-curly-and-newline)
-;          ;; fixes problem with pretty function font-lock
-;          (define-key espresso-mode-map (kbd ",") 'self-insert-command)
-;          (font-lock-add-keywords
-;           'espresso-mode `(("\\(function *\\)("
-;                             (0 (progn (compose-region (match-beginning 1)
-;                                                       (match-end 1) "ƒ")
-;                                       nil)))))))
-
-(provide 'starter-kit-js)
-;;; starter-kit-js.el ends here
