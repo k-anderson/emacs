@@ -1,6 +1,16 @@
 (add-to-list 'load-path (concat emacs-dir "vendor/java/jdee-2.4.0.1/lisp"))
 (add-to-list 'load-path (expand-file-name (concat emacs-dir "vendor/elib-1.0")))
 
+;; '(jde-bug-debugger-host-address "127.0.0.1")
+;; '(jde-bug-jre-home "/usr/lib/jvm/java-6-sun")
+;; '(jde-compile-option-debug (quote ("all" (t nil nil))))
+;; (setq jde-debugger (quote ("jdb")))
+;; '(jde-global-classpath (quote ("." "/usr/share/java/" "/usr/lib/jvm/java-6-sun/")))
+;; '(jde-jdk-doc-url "/usr/share/doc/sun-java6-jdk/html/api/index.html")
+(setq jde-jdk-registry (quote (("1.6" . "/usr/lib/jvm/java-6-sun"))))
+;; '(jde-regexp-jar-file "/usr/share/java/regexp.jar")
+;; '(jde-sourcepath (quote (".")))
+
 (setq defer-loading-jde nil)
 
 (if defer-loading-jde
