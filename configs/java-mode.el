@@ -33,7 +33,7 @@
          (local-file  (file-relative-name
                        temp-file
                        (file-name-directory buffer-file-name))))
-    ;; Change your ecj.jar location here
+    ;; Change your ecj.jar location here    
     (list "java" (list "-jar" (concat emacs-dir "vendor/java/ecj.jar") "-Xemacs" "-d" "/dev/null"
                        "-source" "1.5" "-target" "1.5" "-proceedOnError"
                        "-sourcepath" (car jde-sourcepath) "-classpath"

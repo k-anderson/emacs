@@ -1,5 +1,5 @@
 ;; android mode from android sdk
-(load-file "/opt/android-sdk/tools/lib/android.el")
+(load-file (concat emacs-dir "vendor/android/android.el"))
 
 ;; android-mode
 (add-to-list 'load-path (concat emacs-dir "vendor/java/android-mode"))

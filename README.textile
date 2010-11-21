@@ -109,6 +109,10 @@ h3. Textile-mode
 *References*:
 "http://www.emacswiki.org/emacs/TextileMode":http://www.emacswiki.org/emacs/TextileMode
 
+h3. Javascript-mode
+
+You have to run the makefile in vendor/javascript/js2-mode/
+
 h3. Python-mode
 
 *Installation*:

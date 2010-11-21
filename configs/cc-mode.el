@@ -3,7 +3,7 @@
 (load-file (concat emacs-dir "/vendor/eldoc/eldoc.el"))
 
 ;; c include directories
-(setq c-eldoc-includes "-I/opt/ri/include -I./ -I../ ")
+(setq c-eldoc-includes "-I/opt/lemur/include -I/opt/ri/include -I./ -I../ ")
 
 ;; customisation of cc-mode
 (defun c-mode/common-hook ()
@@ -46,6 +46,9 @@
 ;;add as many system include as necessary
 (semantic-add-system-include "/opt/ri/include" 'c++-mode)
 (semantic-add-system-include "/opt/ri/include" 'c-mode)
+
+(semantic-add-system-include "/opt/lemur/include" 'c++-mode)
+(semantic-add-system-include "/opt/lemur/include" 'c-mode)
 
 (setq boost-base-directory "/opt/ri/include")
 

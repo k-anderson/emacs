@@ -21,8 +21,7 @@
 		  "yasnippet"
 		  "flymake"
 		  "cedet"
-		  "auto-complete"
-		  "org-mode"
+		  "auto-complete"		  
 		  "textile-mode"
 		  "elisp-mode"
 		  "python-mode"
@@ -31,6 +30,7 @@
 		  "php-mode"
                   "java-mode"
 		  "javascript-mode"
+		  "css-mode"
 		  "android-mode"
 		))
 

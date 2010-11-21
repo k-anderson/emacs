@@ -8,15 +8,15 @@
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
 ;; pymacs
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
-;;(eval-after-load "pymacs"
+;; (autoload 'pymacs-apply "pymacs")
+;; (autoload 'pymacs-call "pymacs")
+;; (autoload 'pymacs-eval "pymacs" nil t)
+;; (autoload 'pymacs-exec "pymacs" nil t)
+;; (autoload 'pymacs-load "pymacs" nil t)
+;; ;;(eval-after-load "pymacs"
 
-(pymacs-load "ropemacs" "rope-")
-(setq ropemacs-enable-autoimport t)
+;; (pymacs-load "ropemacs" "rope-")
+;; (setq ropemacs-enable-autoimport t)
 
 ;; --commons
 (add-hook 'python-mode-hook 'commons/common-hook)
@@ -31,8 +31,8 @@
   (auto-complete-mode t)
 
   ;; style customization
-  (setq tab-width 2)
-  (setq py-indent-offset 2)
+  (setq tab-width 4)
+  (setq py-indent-offset 4)
   (setq py-smart-indentation nil)
   (setq indent-tabs-mode nil)
 
