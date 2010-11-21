@@ -31,7 +31,8 @@
 		  "php-mode"
                   "java-mode"
 		  "javascript-mode"
-		  "android-mode"))
+		  "android-mode"
+		))
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
