@@ -96,14 +96,6 @@ h3. Auto-complete mode
 *References*:
 * "http://www.emacswiki.org/emacs/AutoComplete":http://www.emacswiki.org/emacs/AutoComplete
 
-h3. Org-mode
-
-A very good tutorial for *org-mode*: "http://doc.norang.ca/org-mode.html":http://doc.norang.ca/org-mode.html.
-
-*References*:
-* "http://www.emacswiki.org/emacs/OrgMode":http://www.emacswiki.org/emacs/OrgMode
-* "http://orgmode.org/":http://orgmode.org/
-
 h3. Textile-mode
 
 *References*:
@@ -111,7 +103,9 @@ h3. Textile-mode
 
 h3. Javascript-mode
 
-You have to run the makefile in vendor/javascript/js2-mode/
+*Installation*:
+# @cd vendor/javascript/js2-mode/@
+# @make@
 
 h3. Python-mode
 

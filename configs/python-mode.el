@@ -1,5 +1,5 @@
 (add-to-list 'load-path (concat emacs-dir "vendor/python/python-mode"))
-(add-to-list 'load-path (concat emacs-dir "vendor/python/pymacs"))
+;; (add-to-list 'load-path (concat emacs-dir "vendor/python/pymacs"))
 
 (require 'python-mode)
 
