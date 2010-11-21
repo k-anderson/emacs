@@ -15,6 +15,7 @@ New to emacs? Take a look at:
 h2. Tips
 
 * Run *\C-h m* to get information and key bindings for the current buffer mode.
+* Start your emacs with @/usr/bin/emacs23 --no-splash@
 
 h2. Requirements
 
