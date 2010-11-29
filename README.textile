@@ -145,8 +145,7 @@ h3. PHP-mode
 h3. Java-mode
 
 *prj.el sample*
-
-pre.
+<pre>
 (jde-project-file-version "1.0")
 (jde-set-variables
  ;; Set here default parameter for make program
@@ -229,6 +228,7 @@ pre.
  ;; You can set different user name and e-mail address for each project
  '(user-mail-address "alanclic@gmail.com")
 )
+</pre>
 
 *References*:
 "http://www.emacswiki.org/emacs/JavaDevelopmentEnvironment":http://www.emacswiki.org/emacs/JavaDevelopmentEnvironment
