@@ -22,7 +22,29 @@
              auto-mode-alist)))
   (require 'jde))
 
+;; -- needed to support auto-complete-mode
+(add-to-list 'ac-modes 'jde-mode)
 
+;; --hooks
+(defun jde-mode/hook ()
+  (c-add-style "my-java"
+               '("java"
+                 (c-basic-offset . 4)
+                 (c-offsets-alist . ((substatement-open . 0)
+                                     (arglist-intro . +)
+                                     (arglist-close . 0)))))
+  (c-set-style "my-java")
+  (setq c-auto-newline t)
+  (local-set-key (kbd "C-3") 'flymake-goto-next-error)
+  (local-set-key (kbd "C-4") 'flymake-goto-prev-error)
+  (local-set-key (kbd "C-.") 'jde-complete)
+  (local-set-key (kbd "C-I") 'jde-import-all)
+  (local-set-key [f3] 'jde-open-class-at-point)
+  (flymake-mode)
+  (auto-complete-mode t)
+  )
+
+(add-hook 'jde-mode-hook 'jde-mode/hook)
 
 ;; --flymake
 (require 'flymake)

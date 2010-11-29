@@ -3,30 +3,30 @@
 
 (setq semanticdb-default-save-directory (concat emacs-dir "/.emacs-semanticdb")) ; getting rid of semantic.caches
 
-(semantic-load-enable-excessive-code-helpers)
+;;(semantic-load-enable-excessive-code-helpers)
 
 ;; ede
 (require 'semantic-lex-spp)
 (global-ede-mode t) ; enable ede mode
 
-(global-semantic-mru-bookmark-mode 1)
+;;(global-semantic-mru-bookmark-mode 1)
 
 ;; smart complitions
-(require 'semantic-ia)
+;;(require 'semantic-ia)
 
 ;; (setq-mode-local erlang-mode semanticdb-find-default-throttle
 ;;                  '(project unloaded system recursive))
 
 (require 'eassist)
 
-(add-hook 'semantic-init-hooks 'cedet/hook)
+;;(add-hook 'semantic-init-hooks 'cedet/hook)
 
 ;; ctags
 (require 'semanticdb-ectag)
 (semantic-load-enable-primary-exuberent-ctags-support)
 
 ;;
-(global-semantic-idle-tag-highlight-mode 1)
+;;(global-semantic-idle-tag-highlight-mode 1)
 
 ;; customisation of modes
 (defun cedet/hook ()

@@ -11,3 +11,12 @@
 
 ;; copy to clipboard too
 (setq x-select-enable-clipboard t)
+
+;; show line numbers
+(setq line-number-mode t)
+
+;; show column numbers
+(setq column-number-mode t)
+
+;; let's you delete with delete key
+(delete-selection-mode t)
