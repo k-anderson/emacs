@@ -13,6 +13,8 @@
 
 (setq defer-loading-jde nil)
 
+(message "1")
+
 (if defer-loading-jde
     (progn
       (autoload 'jde-mode "jde" "JDE mode." t)
@@ -25,8 +27,12 @@
 ;; -- needed to support auto-complete-mode
 (add-to-list 'ac-modes 'jde-mode)
 
+(add-to-list 'load-path (expand-file-name (concat emacs-dir "vendor/jdibug")))
+(require 'jdibug)
+
 ;; --hooks
 (defun jde-mode/hook ()
+  (message "jde-mode-hook")
   (c-add-style "my-java"
                '("java"
                  (c-basic-offset . 4)
@@ -45,6 +51,8 @@
   )
 
 (add-hook 'jde-mode-hook 'jde-mode/hook)
+
+(message "2")
 
 ;; --flymake
 (require 'flymake)
