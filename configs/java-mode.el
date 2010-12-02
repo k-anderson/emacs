@@ -7,13 +7,13 @@
 ;; (setq jde-debugger (quote ("jdb")))
 ;; '(jde-global-classpath (quote ("." "/usr/share/java/" "/usr/lib/jvm/java-6-sun/")))
 ;; '(jde-jdk-doc-url "/usr/share/doc/sun-java6-jdk/html/api/index.html")
+
 (setq jde-jdk-registry (quote (("1.6" . "/usr/lib/jvm/java-6-sun"))))
+
 ;; '(jde-regexp-jar-file "/usr/share/java/regexp.jar")
 ;; '(jde-sourcepath (quote (".")))
 
 (setq defer-loading-jde nil)
-
-(message "1")
 
 (if defer-loading-jde
     (progn
@@ -27,8 +27,10 @@
 ;; -- needed to support auto-complete-mode
 (add-to-list 'ac-modes 'jde-mode)
 
-(add-to-list 'load-path (expand-file-name (concat emacs-dir "vendor/jdibug")))
-(require 'jdibug)
+;;(add-to-list 'load-path (expand-file-name (concat emacs-dir "vendor/jdibug-0.1")))
+;;(require 'jdibug)
+;; (setq jdibug-use-jde-source-paths nil)
+;; (setq jdibug-source-paths '("/mnt/sda6/alan/workspace/java/teste"))
 
 ;; --hooks
 (defun jde-mode/hook ()
@@ -45,14 +47,19 @@
   (local-set-key (kbd "C-4") 'flymake-goto-prev-error)
   (local-set-key (kbd "C-.") 'jde-complete)
   (local-set-key (kbd "C-I") 'jde-import-all)
+  
+  ;; jdibug keys
+  ;;(define-key jde-mode-map [f8]   'jdibug-step-over) 
+  ;;(define-key jde-mode-map [C-f8] 'jdibug-step-into) 
+  ;;(define-key jde-mode-map [f7]   'jdibug-step-out) 
+  ;;(define-key jde-mode-map [C-f7] 'jdibug-resume)  
+  
   (local-set-key [f3] 'jde-open-class-at-point)
   (flymake-mode)
   (auto-complete-mode t)
   )
 
 (add-hook 'jde-mode-hook 'jde-mode/hook)
-
-(message "2")
 
 ;; --flymake
 (require 'flymake)
