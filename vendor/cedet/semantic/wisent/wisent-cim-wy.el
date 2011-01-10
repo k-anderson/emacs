@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2002 David Ponce
 
-;; Author: Alan Castro <alan@rabico>
-;; Created: 2010-07-19 09:24:26-0300
+;; Author: Alan Castro <alan@zwks02>
+;; Created: 2011-01-10 14:02:49-0200
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 
