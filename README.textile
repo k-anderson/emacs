@@ -35,6 +35,8 @@ h2. Installation
 
 @ln -s emacs-files-directory/.emacs ~/.emacs@
 
+Where emacs-files-directory is the absolute where you cloned the project.
+
 Now follow each package documentation to see if there is anything else to be done.
 
 h2. Packages
@@ -109,6 +111,13 @@ h3. Javascript-mode
 # @make@
 
 h3. Python-mode
+
+*Installation*:
+* @cd vendor/python@
+* @hg clone http://bitbucket.org/agr/rope@
+* @hg clone http://bitbucket.org/agr/ropemacs@
+* @sudo easy_install rope@
+* @sudo easy_install ropemacs@
 
 *References*:
 http://launchpad.net/python-mode

@@ -26,63 +26,74 @@ def test_1():
     else:
         false_string = '0'
         true_string = '1'
-    for quotable, input, output in (
-            (False, None, 'nil'),
-            (False, False, false_string),
-            (False, True, true_string),
-            (False, 3, '3'),
-            (False, 0, '0'),
-            (False, -3, '-3'),
-            (False, 3., '3.0'),
-            (False, 0., '0.0'),
-            (False, -3., '-3.0'),
-            (False, '', '""'),
-            (False, 'a', '"a"'),
-            (False, 'byz', '"byz"'),
-            (False, 'c\'bz', '"c\'bz"'),
-            (False, 'd"z', r'"d\"z"'),
-            (False, 'e\\bz', r'"e\\bz"'),
-            (False, 'f\bz', r'"f\bz"'),
-            (False, 'g\fz', r'"g\fz"'),
-            (False, 'h\nz', r'"h\nz"'),
-            (False, 'i\rz', r'"i\rz"'),
-            (False, 'j\r\nz', r'"j\r\nz"'),
-            (False, 'k\tz', r'"k\tz"'),
-            (False, 'l\x1bz', r'"l\033z"'),
-            (False, u'p', '"p"'),
-            (False, u'qyz', '"qyz"'),
-            (False, u'rêvé', (r'(decode-coding-string "r\303\252v\303\251"'
-                              ' \'utf-8)')),
-            (False, u's—z!', (r'(decode-coding-string "s\342\200\224z!"'
-                              ' \'utf-8)')),
-            (False, (), '[]'),
-            (False, (0,), '[0]'),
-            (False, (0.0,), '[0.0]'),
-            (False, ('a',), '["a"]'),
-            (False, (0, 0.0, "a"), '[0 0.0 "a"]'),
-            (True, [], 'nil'),
-            (True, [0], '(0)'),
-            (True, [0.0], '(0.0)'),
-            (True, ['a'], '("a")'),
-            (True, [0, 0.0, "a"], '(0 0.0 "a")'),
-            (False, lisp['nil'], 'nil'),
-            (True, lisp['t'], 't'),
-            (True, lisp['ab_cd'], 'ab_cd'),
-            (True, lisp['ab-cd'], 'ab-cd'),
-            (True, lisp['lambda'], 'lambda'),
-            (False, lisp.nil, 'nil'),
-            (True, lisp.t, 't'),
-            (True, lisp.ab_cd, 'ab-cd'),
-            # TODO: Lisp and derivatives
-            ):
+    tests = []
+    tests += [(False, None, 'nil'),
+              (False, False, false_string),
+              (False, True, true_string),
+              (False, 3, '3'),
+              (False, 0, '0'),
+              (False, -3, '-3'),
+              (False, 3., '3.0'),
+              (False, 0., '0.0'),
+              (False, -3., '-3.0'),
+              (False, '', '""'),
+              (False, 'a', '"a"'),
+              (False, 'byz', '"byz"'),
+              (False, 'c\'bz', '"c\'bz"'),
+              (False, 'd"z', r'"d\"z"'),
+              (False, 'e\\bz', r'"e\\bz"'),
+              (False, 'f\bz', r'"f\bz"'),
+              (False, 'g\fz', r'"g\fz"'),
+              (False, 'h\nz', r'"h\nz"'),
+              (False, 'i\rz', r'"i\rz"'),
+              (False, 'j\r\nz', r'"j\r\nz"'),
+              (False, 'k\tz', r'"k\tz"'),
+              (False, 'l\x1bz', r'"l\033z"')]
+
+
+
+
+
+
+
+
+
+
+    tests += [(False, u'p', '"p"'),
+              (False, u'qyz', '"qyz"'),
+              (False, u'rêvé',
+                  (r'(decode-coding-string "r\303\252v\303\251"'
+                      ' \'utf-8)')),
+              (False, u's—z!',
+                  (r'(decode-coding-string "s\342\200\224z!"'
+                      ' \'utf-8)'))]
+    tests += [(False, (), '[]'),
+              (False, (0,), '[0]'),
+              (False, (0.0,), '[0.0]'),
+              (False, ('a',), '["a"]'),
+              (False, (0, 0.0, "a"), '[0 0.0 "a"]'),
+              (True, [], 'nil'),
+              (True, [0], '(0)'),
+              (True, [0.0], '(0.0)'),
+              (True, ['a'], '("a")'),
+              (True, [0, 0.0, "a"], '(0 0.0 "a")'),
+              (False, lisp['nil'], 'nil'),
+              (True, lisp['t'], 't'),
+              (True, lisp['ab_cd'], 'ab_cd'),
+              (True, lisp['ab-cd'], 'ab-cd'),
+              (True, lisp['lambda'], 'lambda'),
+              (False, lisp.nil, 'nil'),
+              (True, lisp.t, 't'),
+              (True, lisp.ab_cd, 'ab-cd')]
+    # TODO: Lisp and derivatives
+    for quotable, input, output in tests:
         if quotable:
             yield validate, repr(input), '(return \'%s)\n' % output
         else:
             yield validate, repr(input), '(return %s)\n' % output
-    for input, output in (
-            ('ord', '(pymacs-defun 0 nil)'),
-            ('object()', '(pymacs-python 0)'),
-            ):
+    tests = [('ord', '(pymacs-defun 0 nil)'),
+             ('object()', '(pymacs-python 0)')]
+    for input, output in tests:
         yield validate, input, '(return %s)\n' % output
 
 def test_2():

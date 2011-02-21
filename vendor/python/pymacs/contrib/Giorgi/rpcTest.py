@@ -1,5 +1,25 @@
+# -*- coding: utf-8 -*-
 
-import xmlrpclib,os
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import os, xmlrpclib
 
 if __name__ == "__main__":
     print "My dir is:"+os.getcwd()

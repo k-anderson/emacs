@@ -2,50 +2,57 @@
 # Copyright © 2001, 2002, 2003 Progiciels Bourbeau-Pinard inc.
 # François Pinard <pinard@iro.umontreal.ca>, 2001.
 
-PYSETUP = python setup.py
+EMACS = emacs
+PYTHON = python
+RST2LATEX = rst2latex
 
-emacs = $(PYMACS_EMACS)
-python = $(PYMACS_PYTHON)
+PYSETUP = $(PYTHON) setup.py
+P4 = $(PYTHON) p4 -C p4config.py
 
 all:
+	$(P4) *.in Pymacs contrib tests
 	$(PYSETUP) build
 
-check:
-	$(PYSETUP) clean
-	touch .stamp
+check: clean-debug
+	$(P4) pymacs.el.in Pymacs tests
 	cd tests && \
-	  PYMACS_EMACS="$(emacs)" PYMACS_PYTHON="$(python)" \
-	  $${python-python} pytest -f t $(TEST)
+	  EMACS="$(EMACS)" PYTHON="$(PYTHON)" \
+	  PYMACS_OPTIONS="-d debug-protocol -s debug-signals" \
+	  $(PYTHON) pytest -f t $(TEST)
 
 install:
+	$(P4) *.in Pymacs contrib tests
 	$(PYSETUP) install
 
-clean: clean-setup
+clean: clean-debug
 	rm -rf build* contrib/rebox/build
-	rm -f */*py.class */*.pyc pymacs.pdf
+	rm -f */*py.class */*.pyc p4.pdf pymacs.pdf
+	$(P4) -c *.in Pymacs contrib tests
 
-clean-setup:
-	rm -f .stamp Pymacs/__init__.py pymacs.el pymacs.rst
-	cd contrib/Giorgi && rm -f setup.py Pymacs/__init__.py
-	cd contrib/rebox && rm -f setup.py Pymacs/__init__.py
+clean-debug:
+	rm -f tests/debug-protocol tests/debug-signals
 
-pymacs.pdf: pymacs.rst.in
-	$(PYSETUP) clean
-	touch .stamp
+p4.pdf: p4.rst.in
+	$(P4) p4.rst.in
 	rm -rf tmp-pdf
 	mkdir tmp-pdf
-	rst2latex.py --use-latex-toc --input-encoding=UTF-8 \
+	$(RST2LATEX) --use-latex-toc --input-encoding=UTF-8 \
+	  p4.rst tmp-pdf/p4.tex
+	cd tmp-pdf && pdflatex p4.tex
+	cd tmp-pdf && pdflatex p4.tex
+	mv -f tmp-pdf/p4.pdf $@
+	rm -rf tmp-pdf
+
+pymacs.pdf: pymacs.rst.in
+	$(P4) pymacs.rst.in
+	rm -rf tmp-pdf
+	mkdir tmp-pdf
+	$(RST2LATEX) --use-latex-toc --input-encoding=UTF-8 \
 	  pymacs.rst tmp-pdf/pymacs.tex
 	cd tmp-pdf && pdflatex pymacs.tex
 	cd tmp-pdf && pdflatex pymacs.tex
 	mv -f tmp-pdf/pymacs.pdf $@
 	rm -rf tmp-pdf
-
-# (Note: python setup.py clean is the most no-op setup.py I could find.)
-pymacs.el pymacs.rst Pymacs/__init__.py: .stamp
-.stamp: pymacs.el.in pymacs.rst.in __init__.py.in
-	$(PYSETUP) clean
-	touch .stamp
 
 # The following goals for the maintainer of the Pymacs Web site.
 
@@ -54,7 +61,7 @@ push: local
 	push alcyon -d entretien/pymacs
 	ssh alcyon 'make-web -C entretien/pymacs/web'
 
-local: pymacs.pdf pymacs.rst
+local: p4.pdf pymacs.pdf pymacs.rst
 	make-web -C web
 
 VERSION = `grep '^version' setup.py | sed -e "s/'$$//" -e "s/.*'//"`

@@ -2,6 +2,9 @@
 
 # Python side of the testing protocol.
 
+
+
+
 __metaclass__ = type
 import os
 
@@ -52,8 +55,8 @@ class Emacs(Launch):
         self.cleanup()
         import atexit
         atexit.register(self.cleanup)
-        emacs = os.environ.get('PYMACS_EMACS') or 'emacs'
-        self.command = emacs, '-batch', '-q', '-l', 'setup.el'
+        emacs = os.environ.get('EMACS') or 'emacs'
+        self.command = emacs, '-batch', '--no-site', '-q', '-l', 'setup.el'
         if subprocess is None:
             self.command = self.command + ('-f', 'run-one-request')
         else:
@@ -74,7 +77,7 @@ class Emacs(Launch):
 
     def receive(self):
         if subprocess is None:
-            handle = file('_reply')
+            handle = open('_reply')
             buffer = handle.read()
             handle.close()
         else:
@@ -82,16 +85,22 @@ class Emacs(Launch):
             while os.path.exists('_request'):
                 self.popen.poll()
                 assert self.popen.returncode is None, self.popen.returncode
-                time.sleep(0.01)
+                time.sleep(0.005)
             self.popen.poll()
             assert self.popen.returncode is None, self.popen.returncode
-            handle = file('_reply')
+
+
+
+            handle = open('_reply')
             buffer = handle.read()
             handle.close()
         return buffer
 
     def send(self, text):
-        handle = file('_request', 'w')
+
+
+
+        handle = open('_request', 'w')
         handle.write(text)
         handle.close()
         if subprocess is None:
@@ -122,41 +131,80 @@ class Python(Launch):
     def __init__(self):
         Launch.__init__(self)
         # Start a Pymacs helper subprocess for executing Python code.
-        python = os.environ.get('PYMACS_PYTHON') or 'python'
-        command = python + ' -c "from Pymacs.pymacs import main; main(\'..\')"'
-        import popen2
-        self.output, self.input = popen2.popen4(command)
+        import subprocess
+        self.process = subprocess.Popen(
+                [os.environ.get('PYTHON') or 'python',
+                    '-c', 'from Pymacs.pymacs import main; main(\'..\')'],
+                stdin=subprocess.PIPE, stdout=subprocess.PIPE)
         text = self.receive()
-        from Pymacs import __version__
-        assert text == '(version "%s")\n' % __version__, repr(text)
+        assert text == '(version "0.24-beta2")\n', repr(text)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def receive(self):
         # Receive a Lisp expression from the Pymacs helper.
-        text = self.output.read(3)
-        if not text or text[0] != '<':
-            if text == 'Tra':
+        stdout = self.process.stdout
+        data = stdout.read(3)
+        if not data or data[0] != '<':
+            if data == 'Tra':
                 # Likely a traceback, and the Pymacs helper terminated.
-                diagnostic = 'got:\n' + text + self.output.read()
+                diagnostic = 'got:\n' + data + stdout.read()
             else:
-                diagnostic = 'got ' + repr(text)
+                diagnostic = 'got ' + repr(data)
             raise pymacs.ProtocolError("'<' expected, %s\n" % diagnostic)
-        while text[-1] != '\t':
-            text = text + self.output.read(1)
-        return self.output.read(int(text[1:-1]))
+        while data[-1] != '\t':
+            data += stdout.read(1)
+        return stdout.read(int(data[1:-1]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def send(self, text):
         # Send TEXT, a Python expression, to the Pymacs helper.
+        stdin = self.process.stdin
         if text[-1] == '\n':
-            self.input.write('>%d\t%s' % (len(text), text))
+            stdin.write('>%d\t%s' % (len(text), text))
         else:
-            self.input.write('>%d\t%s\n' % (len(text) + 1, text))
-        self.input.flush()
+            stdin.write('>%d\t%s\n' % (len(text) + 1, text))
+        stdin.flush()
 
 def start_python():
     Python.services = Python()
 
 def stop_python():
-    Python.services.input.close()
+    Python.services.process.kill()
 
 def ask_python(text):
     Python.services.send(text)
