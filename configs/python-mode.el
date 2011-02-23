@@ -1,22 +1,19 @@
 (add-to-list 'load-path (concat emacs-dir "vendor/python/python-mode"))
-(add-to-list 'load-path (concat emacs-dir "vendor/python/pymacs"))
+(add-to-list 'load-path (concat emacs-dir "vendor/python/ipython"))
+(add-to-list 'load-path (concat emacs-dir "vendor/python/anything"))
 
 (require 'python-mode)
+(require 'ipython)
+(require 'anything)
+(require 'anything-ipython)
+
+(when (require 'anything-show-completion nil t)
+   (use-anything-show-completion 'anything-ipython-complete
+                                 '(length initial-pattern)))
 
 (autoload 'python-mode "python-mode" "Python Mode." t)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
-
-;;pymacs
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
-
-;;ropemacs
-(pymacs-load "ropemacs" "rope-")
-(setq ropemacs-enable-autoimport t)
 
 ;;--commons
 (add-hook 'python-mode-hook 'commons/common-hook)
@@ -40,6 +37,11 @@
 
   ;;local keys
   (local-set-key [return] 'newline-and-indent)
+
+  (define-key py-mode-map (kbd "C-<tab>") 'anything-ipython-complete)
+  (define-key py-shell-map (kbd "C-<tab>") 'anything-ipython-complete)
+  (define-key py-mode-map (kbd "C-c M") 'anything-ipython-import-modules-from-buffer)
+
 
   )
 
