@@ -9,6 +9,16 @@
 ;; '(jde-jdk-doc-url "/usr/share/doc/sun-java6-jdk/html/api/index.html")
 
 (setq jde-jdk-registry (quote (("1.6" . "/usr/lib/jvm/java-6-sun"))))
+(setq jde-sourcepath (quote (".")))
+(setq jde-global-classpath (quote (".")))
+(setq jdk-source-version "1.6")
+(setq jdk-target-version "1.6")
+
+;; ajc-java-complete config
+(add-to-list 'load-path (concat emacs-dir "vendor/java/ajc-java-complete"))
+(require 'ajc-java-complete-config)
+(add-hook 'java-mode-hook 'ajc-java-complete-mode)
+(add-hook 'find-file-hook 'ajc-4-jsp-find-file-hook)
 
 ;; '(jde-regexp-jar-file "/usr/share/java/regexp.jar")
 ;; '(jde-sourcepath (quote (".")))
@@ -38,15 +48,11 @@
   (c-add-style "my-java"
                '("java"
                  (c-basic-offset . 4)
-                 (c-offsets-alist . ((substatement-open . 0)
-                                     (arglist-intro . +)
-                                     (arglist-close . 0)))))
+))
   (c-set-style "my-java")
-  (setq c-auto-newline t)
+
   (local-set-key (kbd "C-3") 'flymake-goto-next-error)
   (local-set-key (kbd "C-4") 'flymake-goto-prev-error)
-  (local-set-key (kbd "C-.") 'jde-complete)
-  (local-set-key (kbd "C-I") 'jde-import-all)
   
   ;; jdibug keys
   ;;(define-key jde-mode-map [f8]   'jdibug-step-over) 
@@ -71,8 +77,9 @@
                        temp-file
                        (file-name-directory buffer-file-name))))
     ;; Change your ecj.jar location here    
-    (list "java" (list "-jar" (concat emacs-dir "vendor/java/ecj.jar") "-Xemacs" "-d" "/dev/null"
-                       "-source" "1.5" "-target" "1.5" "-proceedOnError"
+
+    (list "java" (list "-jar" (concat emacs-dir "vendor/java/ecj.jar") "-Xemacs" "-d" "/tmp"
+                       "-source" jdk-source-version "-target" jdk-target-version "-proceedOnError"
                        "-sourcepath" (car jde-sourcepath) "-classpath"
                        (jde-build-classpath jde-global-classpath) local-file))))
 
