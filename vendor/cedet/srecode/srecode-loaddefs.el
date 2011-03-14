@@ -7,7 +7,11 @@
 ;;;;;;  srecode-semantic-handle-:file srecode-semantic-handle-:time
 ;;;;;;  srecode-semantic-handle-:user srecode-semantic-handle-:region
 ;;;;;;  srecode-semantic-handle-:indent srecode-semantic-handle-:blank)
+<<<<<<< HEAD
 ;;;;;;  "srecode-args" "srecode-args.el" (19723 47331))
+=======
+;;;;;;  "srecode-args" "srecode-args.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-args.el
 
 (autoload 'srecode-semantic-handle-:blank "srecode-args" "\
@@ -55,7 +59,11 @@ Add macros into the dictionary DICT based on the kill ring.
 ;;;***
 
 ;;;### (autoloads (srecode-compile-templates srecode-compile-file)
+<<<<<<< HEAD
 ;;;;;;  "srecode-compile" "srecode-compile.el" (19723 47331))
+=======
+;;;;;;  "srecode-compile" "srecode-compile.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-compile.el
 
 (autoload 'srecode-compile-file "srecode-compile" "\
@@ -71,7 +79,11 @@ Compile a semantic recode template file into a mode-local variable.
 ;;;***
 
 ;;;### (autoloads (srecode-semantic-handle-:cpp) "srecode-cpp" "srecode-cpp.el"
+<<<<<<< HEAD
 ;;;;;;  (19723 47331))
+=======
+;;;;;;  (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-cpp.el
 
 (autoload 'srecode-semantic-handle-:cpp "srecode-cpp" "\
@@ -85,7 +97,11 @@ HEADER - Shown section if in a header file.
 ;;;***
 
 ;;;### (autoloads (srecode-calculate-context) "srecode-ctxt" "srecode-ctxt.el"
+<<<<<<< HEAD
 ;;;;;;  (19723 47331))
+=======
+;;;;;;  (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-ctxt.el
 
 (autoload 'srecode-calculate-context "srecode-ctxt" "\
@@ -127,7 +143,11 @@ Some useful context values used by the provided srecode templates are:
 
 ;;;### (autoloads (srecode-dictionary-dump srecode-adebug-dictionary
 ;;;;;;  srecode-create-dictionary) "srecode-dictionary" "srecode-dictionary.el"
+<<<<<<< HEAD
 ;;;;;;  (19723 47331))
+=======
+;;;;;;  (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-dictionary.el
 
 (eieio-defclass-autoload 'srecode-dictionary 'nil "srecode-dictionary" "Dictionary of symbols and what they mean.\nDictionaries are used to look up named symbols from\ntemplates to decide what to do with those symbols.")
@@ -167,7 +187,11 @@ Dump a typical fabricated dictionary.
 ;;;### (autoloads (srecode-document-function-comment-extract-test
 ;;;;;;  srecode-document-insert-group-comments srecode-document-insert-variable-one-line-comment
 ;;;;;;  srecode-document-insert-function-comment srecode-document-insert-comment)
+<<<<<<< HEAD
 ;;;;;;  "srecode-document" "srecode-document.el" (19723 47331))
+=======
+;;;;;;  "srecode-document" "srecode-document.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-document.el
 
 (eval-after-load "srecode-mode" '(progn (srecode-add-code-generator 'srecode-document-insert-comment "Comments" "C")))
@@ -216,7 +240,11 @@ Dump out the extracted dictionary.
 ;;;***
 
 ;;;### (autoloads (srecode-semantic-handle-:el-custom srecode-semantic-handle-:el)
+<<<<<<< HEAD
 ;;;;;;  "srecode-el" "srecode-el.el" (19723 47331))
+=======
+;;;;;;  "srecode-el" "srecode-el.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-el.el
 
 (autoload 'srecode-semantic-handle-:el "srecode-el" "\
@@ -237,7 +265,11 @@ Adds the following:
 ;;;***
 
 ;;;### (autoloads (srecode-insert-prototype-expansion) "srecode-expandproto"
+<<<<<<< HEAD
 ;;;;;;  "srecode-expandproto.el" (19723 47331))
+=======
+;;;;;;  "srecode-expandproto.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-expandproto.el
 
 (autoload 'srecode-insert-prototype-expansion "srecode-expandproto" "\
@@ -248,7 +280,11 @@ Insert get/set methods for the current class.
 ;;;***
 
 ;;;### (autoloads (srecode-field-utest) "srecode-fields" "srecode-fields.el"
+<<<<<<< HEAD
 ;;;;;;  (19723 47331))
+=======
+;;;;;;  (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-fields.el
 
 (eieio-defclass-autoload 'srecode-field '(srecode-overlaid) "srecode-fields" "Representation of one field.")
@@ -261,7 +297,11 @@ Test the srecode field manager.
 ;;;***
 
 ;;;### (autoloads (srecode-comment-prefix) "srecode-filters" "srecode-filters.el"
+<<<<<<< HEAD
 ;;;;;;  (19723 47331))
+=======
+;;;;;;  (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-filters.el
 
 (autoload 'srecode-comment-prefix "srecode-filters" "\
@@ -273,7 +313,11 @@ Prefix each line of STR with the comment prefix characters.
 
 ;;;### (autoloads (srecode-read-template-name srecode-template-get-table-for-binding
 ;;;;;;  srecode-template-get-table srecode-load-tables-for-mode srecode-table)
+<<<<<<< HEAD
 ;;;;;;  "srecode-find" "srecode-find.el" (19723 47331))
+=======
+;;;;;;  "srecode-find" "srecode-find.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-find.el
 
 (autoload 'srecode-table "srecode-find" "\
@@ -323,7 +367,11 @@ DEFAULT is what to use if the user presses RET.
 ;;;***
 
 ;;;### (autoloads (srecode-insert-getset) "srecode-getset" "srecode-getset.el"
+<<<<<<< HEAD
 ;;;;;;  (19723 47331))
+=======
+;;;;;;  (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-getset.el
 
 (eval-after-load "srecode-mode" '(progn (srecode-add-code-generator 'srecode-insert-getset "Get/Set" "G")))
@@ -340,7 +388,11 @@ will be derived.
 ;;;***
 
 ;;;### (autoloads (srecode-insert-fcn srecode-insert srecode-insert-again)
+<<<<<<< HEAD
 ;;;;;;  "srecode-insert" "srecode-insert.el" (19723 47331))
+=======
+;;;;;;  "srecode-insert" "srecode-insert.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-insert.el
 
 (autoload 'srecode-insert-again "srecode-insert" "\
@@ -365,7 +417,11 @@ has set everything up already.
 ;;;***
 
 ;;;### (autoloads (srecode-semantic-handle-:java) "srecode-java"
+<<<<<<< HEAD
 ;;;;;;  "srecode-java.el" (19723 47331))
+=======
+;;;;;;  "srecode-java.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-java.el
 
 (autoload 'srecode-semantic-handle-:java "srecode-java" "\
@@ -379,7 +435,11 @@ FILENAME_AS_CLASS - file converted to a Java class name.
 ;;;***
 
 ;;;### (autoloads (srecode-adebug-maps srecode-get-maps) "srecode-map"
+<<<<<<< HEAD
 ;;;;;;  "srecode-map.el" (19723 47331))
+=======
+;;;;;;  "srecode-map.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-map.el
 
 (autoload 'srecode-get-maps "srecode-map" "\
@@ -396,7 +456,11 @@ Run ADEBUG on the output of `srecode-get-maps'.
 ;;;***
 
 ;;;### (autoloads (global-srecode-minor-mode srecode-minor-mode)
+<<<<<<< HEAD
 ;;;;;;  "srecode-mode" "srecode-mode.el" (19723 47331))
+=======
+;;;;;;  "srecode-mode" "srecode-mode.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-mode.el
 
 (autoload 'srecode-minor-mode "srecode-mode" "\
@@ -422,7 +486,11 @@ If ARG is nil, then toggle.
 ;;;### (autoloads (srecode-semantic-insert-tag srecode-semantic-apply-tag-to-dict-default
 ;;;;;;  srecode-semantic-apply-tag-to-dict srecode-semantic-handle-:tagtype
 ;;;;;;  srecode-semantic-handle-:tag) "srecode-semantic" "srecode-semantic.el"
+<<<<<<< HEAD
 ;;;;;;  (19723 47331))
+=======
+;;;;;;  (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-semantic.el
 
 (autoload 'srecode-semantic-handle-:tag "srecode-semantic" "\
@@ -495,7 +563,11 @@ as `function' will leave point where code might be inserted.
 
 ;;;### (autoloads (srecode-semantic-handle-:srt srecode-read-major-mode-name
 ;;;;;;  srecode-read-variable-name) "srecode-srt" "srecode-srt.el"
+<<<<<<< HEAD
 ;;;;;;  (19723 47331))
+=======
+;;;;;;  (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-srt.el
 
 (autoload 'srecode-read-variable-name "srecode-srt" "\
@@ -531,7 +603,11 @@ MODE - The mode of this buffer.  If not declared yet, guess.
 
 ;;;### (autoloads (srecode-dump-templates srecode-mode-table-new
 ;;;;;;  srecode-get-mode-table) "srecode-table" "srecode-table.el"
+<<<<<<< HEAD
 ;;;;;;  (19723 47331))
+=======
+;;;;;;  (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-table.el
 
 (autoload 'srecode-get-mode-table "srecode-table" "\
@@ -555,7 +631,11 @@ Dump a list of the current templates for MODE.
 ;;;***
 
 ;;;### (autoloads (srecode-template-setup-parser) "srecode-template"
+<<<<<<< HEAD
 ;;;;;;  "srecode-template.el" (19723 47331))
+=======
+;;;;;;  "srecode-template.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-template.el
 
 (autoload 'srecode-template-setup-parser "srecode-template" "\
@@ -568,7 +648,11 @@ Setup buffer for parse.
 ;;;***
 
 ;;;### (autoloads (srecode-template-mode) "srecode-template-mode"
+<<<<<<< HEAD
 ;;;;;;  "srecode-template-mode.el" (19723 47331))
+=======
+;;;;;;  "srecode-template-mode.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-template-mode.el
 
 (autoload 'srecode-template-mode "srecode-template-mode" "\
@@ -581,7 +665,11 @@ Major-mode for writing srecode macros.
 ;;;***
 
 ;;;### (autoloads (srecode-utest-template-output) "srecode-test"
+<<<<<<< HEAD
 ;;;;;;  "srecode-test.el" (19723 47331))
+=======
+;;;;;;  "srecode-test.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-test.el
 
 (autoload 'srecode-utest-template-output "srecode-test" "\
@@ -592,7 +680,11 @@ Test various template insertion options.
 ;;;***
 
 ;;;### (autoloads (srecode-utest-getset-output) "srecode-test-getset"
+<<<<<<< HEAD
 ;;;;;;  "srecode-test-getset.el" (19723 47331))
+=======
+;;;;;;  "srecode-test-getset.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-test-getset.el
 
 (autoload 'srecode-utest-getset-output "srecode-test-getset" "\
@@ -604,7 +696,11 @@ Test various template insertion options.
 
 ;;;### (autoloads (srecode-texi-insert-tag-as-doc srecode-semantic-handle-:texitag
 ;;;;;;  srecode-semantic-handle-:texi srecode-texi-add-menu) "srecode-texi"
+<<<<<<< HEAD
 ;;;;;;  "srecode-texi.el" (19723 47331))
+=======
+;;;;;;  "srecode-texi.el" (19755 11003))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 ;;; Generated autoloads from srecode-texi.el
 
 (autoload 'srecode-texi-add-menu "srecode-texi" "\
@@ -639,7 +735,11 @@ Insert TAG into the current buffer with SRecode.
 
 ;;;### (autoloads nil nil ("srecode-document-vars.el" "srecode-extract.el"
 ;;;;;;  "srecode-load.el" "srecode-template-wy.el" "srecode.el")
+<<<<<<< HEAD
 ;;;;;;  (19723 50736 871861))
+=======
+;;;;;;  (19755 11708 20876))
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 
 ;;;***
 

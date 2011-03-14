@@ -35,6 +35,8 @@ h2. Installation
 
 @ln -s emacs-files-directory/.emacs ~/.emacs@
 
+Where emacs-files-directory is the absolute where you cloned the project.
+
 Now follow each package documentation to see if there is anything else to be done.
 
 h2. Packages
@@ -111,10 +113,18 @@ h3. Javascript-mode
 h3. Python-mode
 
 *Installation*:
+<<<<<<< HEAD
 # @chmod +x vendor/python/flymake/pychecker@
 
 *Key bindings*:
 * For rope key bindings: "http://bitbucket.org/agr/ropemacs/src/":http://bitbucket.org/agr/ropemacs/src/
+=======
+* @cd vendor/python@
+* @hg clone http://bitbucket.org/agr/rope@
+* @hg clone http://bitbucket.org/agr/ropemacs@
+* @sudo easy_install rope@
+* @sudo easy_install ropemacs@
+>>>>>>> 2c191d73a536ca934e96cc3f3d758f88e7123cb7
 
 *References*:
 http://launchpad.net/python-mode
