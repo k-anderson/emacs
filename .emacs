@@ -31,7 +31,6 @@
                   "java-mode"
 		  "javascript-mode"
 		  "css-mode"
-;;		  "android-mode"
 		))
 
 (custom-set-variables

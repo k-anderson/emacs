@@ -1,7 +1,17 @@
 ;; -- theme
 ;; load the theme from vendors folder
-(load-file (concat emacs-dir "/vendor/theme-irblack/color-theme-irblack.el"))
 
-;; sets color theme to irblack
 (require 'color-theme)
-(color-theme-irblack)
+
+;; ;; sets color theme to irblack
+;; (load-file (concat emacs-dir "/vendor/theme-irblack/color-theme-irblack.el"))
+;; (color-theme-irblack)
+
+;; ;; sets color theme to sunburst
+;; (load-file (concat emacs-dir "/vendor/theme-sunburst/color-theme-sunburst.el"))
+;; (color-theme-sunburst)
+
+;; sets color theme to twilight
+(load-file (concat emacs-dir "/vendor/theme-twilight/color-theme-twilight.el"))
+(color-theme-twilight)
+
