@@ -23,6 +23,7 @@
 		  "cedet"
 		  "auto-complete"		  
 		  "textile-mode"
+		  "markdown-mode"
 		  "elisp-mode"
 		  "python-mode"
 		  "cc-mode"
@@ -31,6 +32,7 @@
                   "java-mode"
 		  "javascript-mode"
 		  "css-mode"
+		  "cucumber-mode"
 		))
 
 (custom-set-variables
