@@ -15,3 +15,10 @@
 (load-file (concat emacs-dir "/vendor/theme-twilight/color-theme-twilight.el"))
 (color-theme-twilight)
 
+;; sets color theme to blackboard
+;;(load-file (concat emacs-dir "/vendor/theme-blackboard/color-theme-blackboard.el"))
+;;(color-theme-blackboard)
+
+;; sets color theme to blackboard
+;; (load-file (concat emacs-dir "/vendor/theme-tango/color-theme-tango.el"))
+;; (color-theme-tango)

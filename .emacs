@@ -26,6 +26,7 @@
 		  "markdown-mode"
 		  "elisp-mode"
 		  "python-mode"
+		  "django-mode"
 		  "cc-mode"
 		  "erlang-mode"
 		  "php-mode"
@@ -33,6 +34,7 @@
 		  "javascript-mode"
 		  "css-mode"
 		  "cucumber-mode"
+		  "nginx-mode"
 		))
 
 (custom-set-variables
