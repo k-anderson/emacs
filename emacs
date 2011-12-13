@@ -17,9 +17,10 @@
 
 (load-cfg-files '("general"
     "commons"
-;;    "color-theme"
+    "xterm-256"
+    "color-theme"
     "ido"
-;;    "theme"
+    "theme"
     "editor"
     "yasnippet"
     "flymake"

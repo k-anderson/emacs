@@ -1,7 +1,7 @@
 ;; erlang-mode configuration
 ;; change this directory  to your Erlang root dir.
 (setq erlang-root-dir "/usr/lib64/erlang")
-(setq erlang-tools-dir (concat erlang-root-dir "/lib/tools-2.6.6.4"))
+(setq erlang-tools-dir (car (file-expand-wildcards (concat erlang-root-dir "/lib/tools-*"))))
 
 ;; customisation of cc-mode
 (defun erlang-mode/common-hook ()
@@ -63,12 +63,12 @@
 (distel-setup)
 
 ;; Some Erlang customizations
-(add-hook 'erlang-mode-hook
-          (lambda ()
-            ;; when starting an Erlang shell in Emacs, default in the node name
-            (setq inferior-erlang-machine-options '("-name" "emacs"))
-            ;; add Erlang functions to an imenu menu
-            (imenu-add-to-menubar "imenu")))
+;(add-hook 'erlang-mode-hook
+;          (lambda ()
+;            ;; when starting an Erlang shell in Emacs, default in the node name
+;            (setq inferior-erlang-machine-options '("-name" "emacs"))
+;            ;; add Erlang functions to an imenu menu
+;            (imenu-add-to-menubar "imenu")))
 
 ;; A number of the erlang-extended-mode key bindings are useful in the shell too
 (defconst distel-shell-keys

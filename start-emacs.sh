@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/emacs23/bin/emacs
+/usr/local/bin/emacs --debug-init

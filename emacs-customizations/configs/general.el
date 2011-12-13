@@ -48,5 +48,5 @@
   kept-old-versions 2
   version-control t)
 
-;!! (define-key input-decode-map "\e\M-[D" [(meta left)])
-;!! (define-key input-decode-map "\e\M-[C" [(meta right)])
+(define-key input-decode-map "\e\M-[D" [(meta left)])
+(define-key input-decode-map "\e\M-[C" [(meta right)])
