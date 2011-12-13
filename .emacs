@@ -5,6 +5,7 @@
 
 ;; Sets emacs-dir to the current directory where .emacs is placed in.
 (setq emacs-dir (file-name-directory (file-truename (or load-file-name buffer-file-name))))
+(setq emacs-dir (concat emacs-dir ".emacs-customizations/"))
 (setq emacs-config-dir (concat emacs-dir "configs/"))
 
 (defun load-cfg-files (filelist)
@@ -14,28 +15,30 @@
     (message "Loaded config file: %s" file)
     ))
 
-(load-cfg-files '("commons"
-		  "ido"
-		  "theme"		  
-                  "editor"
-		  "yasnippet"
-		  "flymake"
-		  "cedet"
-		  "auto-complete"		  
-		  "textile-mode"
-		  "markdown-mode"
-		  "elisp-mode"
-		  "python-mode"
-		  "django-mode"
-		  "cc-mode"
-		  "erlang-mode"
-		  "php-mode"
-                  "java-mode"
-		  "javascript-mode"
-		  "css-mode"
-		  "cucumber-mode"
-		  "nginx-mode"
-		))
+(load-cfg-files '("general"
+    "commons"
+    "ido"
+    "theme"
+    "editor"
+    "yasnippet"
+    "flymake"
+    "cedet"
+    "auto-complete"
+    "textile-mode"
+    "markdown-mode"
+    "elisp-mode"
+    "python-mode"
+;;    "django-mode"
+    "cc-mode"
+    "erlang-mode"
+    "php-mode"
+;;    "java-mode"
+    "javascript-mode"
+    "css-mode"
+;;    "cucumber-mode"
+;;    "nginx-mode"
+    "tabbar"
+))
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
