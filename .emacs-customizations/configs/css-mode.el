@@ -1,1 +1,0 @@
-(remove-hook 'css-mode-hook 'ac-css-mode-setup)
