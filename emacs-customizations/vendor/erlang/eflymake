@@ -1,7 +1,10 @@
-#!/usr/bin/env /usr/lib/erlang/bin/escript
+#!/usr/bin/env /usr/lib64/erlang/bin/escript
 -export([main/1]).
 
 main([File_Name]) ->    
+    code:add_path("/opt/whistle/2600hz-platform/whistle_apps/ebin"),
+    code:add_paths(filelib:wildcard("/opt/whistle/2600hz-platform/whistle_apps/apps/*/ebin")),
+    code:add_path("/opt/whistle/2600hz-platform/ecallmgr/ebin"),    
     compile:file(File_Name, [warn_obsolete_guard, warn_unused_import,
 			     warn_shadow_vars, warn_export_vars,
-			     strong_validation, report]).
+			     strong_validation, report, bin_opt_info]).

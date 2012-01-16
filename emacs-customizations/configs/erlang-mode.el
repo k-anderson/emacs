@@ -34,10 +34,21 @@
     (add-hook 'erlang-mode-common-hook 'erlang-mode/common-hook)
 
     ;; --flymake
-    (load-file (concat erlang-tools-dir "/emacs/erlang-flymake.el"))
+;;    (load-file (concat erlang-tools-dir "/emacs/erlang-flymake.el"))
 
     )
   )
+
+;; --flymake
+(defun flymake-erlang-init ()
+  (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                     'flymake/create-temp-file))
+         (local-file (file-relative-name
+                      temp-file
+                      (file-name-directory buffer-file-name))))
+    (list (concat emacs-dir "vendor/erlang/eflymake") (list local-file))))
+
+(add-to-list 'flymake-allowed-file-name-masks '("\\.erl\\'" flymake-erlang-init flymake/cleanup))
 
 (defun my-erlang-mode-hook ()
   (flymake-mode 1))
@@ -63,12 +74,12 @@
 (distel-setup)
 
 ;; Some Erlang customizations
-;(add-hook 'erlang-mode-hook
-;          (lambda ()
-;            ;; when starting an Erlang shell in Emacs, default in the node name
-;            (setq inferior-erlang-machine-options '("-name" "emacs"))
-;            ;; add Erlang functions to an imenu menu
-;            (imenu-add-to-menubar "imenu")))
+(add-hook 'erlang-mode-hook
+          (lambda ()
+            ;; when starting an Erlang shell in Emacs, default in the node name
+            (setq inferior-erlang-machine-options '("-name" "emacs"))
+            ;; add Erlang functions to an imenu menu
+            (imenu-add-to-menubar "imenu")))
 
 ;; A number of the erlang-extended-mode key bindings are useful in the shell too
 (defconst distel-shell-keys

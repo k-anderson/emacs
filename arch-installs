@@ -1,1 +1,0 @@
-pacman -S  emacs emacs-color-theme emacs-php-mode emacs-python-mode ctags
