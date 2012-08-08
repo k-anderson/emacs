@@ -1,7 +1,7 @@
 ;;; I want to enter the debugger on any error and see a
 ;;; backtrace. This is first in the file so I get a hint where any
 ;;; errors later on are.
-(setq debug-on-error t)
+(set-frame-parameter (selected-frame) 'alpha '(5 0))
 
 ;; Sets emacs-dir to the current directory where .emacs is placed in.
 (setq emacs-dir (file-name-directory (file-truename (or load-file-name buffer-file-name))))
@@ -40,6 +40,7 @@
 ;;    "cucumber-mode"
 ;;    "nginx-mode"
     "tabbar"
+    "git"
 ))
 
 (custom-set-variables
@@ -55,3 +56,5 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
+
+

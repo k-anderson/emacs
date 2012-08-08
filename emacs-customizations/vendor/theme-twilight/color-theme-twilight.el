@@ -25,13 +25,14 @@
   (interactive)
   (color-theme-install
 	'(color-theme-twilight
-	  ((background-color . "#141414")
-		(background-mode . dark)
+	  (;;(background-color . "#141414")
+	   ;;	(background-mode . dark)
 		(border-color . "black")
 		(cursor-color . "#A7A7A7")
 		(foreground-color . "#F8F8F8")
 		(mouse-color . "sienna1"))
-	  (default ((t (:background "#141414" :foreground "#CACACA"))))
+;;	  (default ((t (:background "#141414" :foreground "#CACACA"))))
+	  (default ((t (:foreground "#CACACA"))))
 	  (blue ((t (:foreground "blue"))))
 	  (border-glyph ((t (nil))))
 	  (buffers-tab ((t (:background "#141414" :foreground "#CACACA"))))
